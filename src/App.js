@@ -1,7 +1,8 @@
 import "./App.css";
 
 function App() {
-  return <div className="App"></div>;
+  //nora 
+  return <div className="App">Nora</div>;
 }
 
 export default App;
