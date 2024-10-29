@@ -1,0 +1,29 @@
+.search-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  .search {
+    width: 600px;
+    height: 50px;
+    background-color: #fcf5ed;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    padding: 20px;
+  }
+  .lable-Searsh {
+    font-size: 28px;
+    color: #897147;
+  }
+  .input-Searsh {
+    flex: 1;
+    height: 30px;
+    border: none;
+    outline: none;
+    font-size: 18px;
+    color: #897147;
+    padding-left: 10px;
+    background-color: #fcf5ed;
+  }

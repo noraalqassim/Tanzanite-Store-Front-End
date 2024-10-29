@@ -22,7 +22,7 @@ export default function NotFound() {
     
     <Link to="/">
     
-    <button class="button" role="button">
+    <button className="button" role="button">
     
     Home
     

@@ -57,12 +57,12 @@ export default function NavBar() {
                 </li>
                 <li className="nav-item">
                   <a className="nav-link" href="#">
-                    Gemstone
+                  <Link to="/gemstone"> Gemstone </Link>  
                   </a>
                 </li>
                 <li className="nav-item">
                   <a className="nav-link" href="#">
-                    Jewelry
+                  <Link to="/jewelry"> jewelry </Link> 
                   </a>
                 </li>
                 <li className="nav-item">

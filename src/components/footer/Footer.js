@@ -9,50 +9,50 @@ export default function Footer() {
   return (
     <div>
       <footer id="footer" data-aos="fade-up" data-aos-duration="1500">
-        <h1 class="text-center">Tanzanite Store</h1>
-        <p class="text-center">
+        <h1 className="text-center">Tanzanite Store</h1>
+        <p className="text-center">
           Where timeless beauty meets personalized design.
         </p>
-        <div class="icons text-center">
+        <div className="icons text-center">
           <a
             href="https://twitter.com"
             target="_blank"
-            class="text-decoration-none"
+            className="text-decoration-none"
           >
             <BsTwitterX />
           </a>
           <a
             href="https://www.instagram.com"
             target="_blank"
-            class="text-decoration-none"
+            className="text-decoration-none"
           >
             <BsInstagram />
           </a>
           <a
             href="https://github.com/NoraAlqassim"
             target="_blank"
-            class="text-decoration-none"
+            className="text-decoration-none"
           >
             <FaGithub />
           </a>
           <a
             href="https://www.linkedin.com/in/noraalqassim12"
             target="_blank"
-            class="text-decoration-none"
+            className="text-decoration-none"
           >
             <ImLinkedin />
           </a>
-          <a href="mailto:noraalqassim@gmail.com" class="text-decoration-none">
+          <a href="mailto:noraalqassim@gmail.com" className="text-decoration-none">
             <HiOutlineMail />
           </a>
         </div>
-        <div class="copyright text-center">
+        <div className="copyright text-center">
           &copy; Copyright <strong>Tanzanite Store</strong> .All Rights Reserved
         </div>
-        <div class="credite text-center">
+        <div className="credite text-center">
           Creating By
           <a href="https://github.com/NoraAlqassim" target="_blank"
-            class="text-decoration-none">
+            className="text-decoration-none">
             <span> Norah Alqassim</span>
           </a>
         </div>
