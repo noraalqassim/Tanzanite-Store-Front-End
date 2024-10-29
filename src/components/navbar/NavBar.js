@@ -12,7 +12,7 @@ export default function NavBar() {
   };
 
   return (
-    <div className="container">
+    <div className="sticky-top" >
       <div className="navbar-top">
         <div className="contact">Contact Us</div>
         <div className="logo">

@@ -2,4 +2,14 @@
 $body-bg: #fff; // Set the body background color to black
 
 // Import Bootstrap and its default variables
-@import '~bootstrap/scss/bootstrap.scss'; // Import Bootstrap SCSS
+@import "~bootstrap/scss/bootstrap.scss"; // Import Bootstrap SCSS
+
+.not-found-page {
+  background-image: url("./images/notFoundPage.jpg");
+  background-size: 80%;
+  background-position: center;
+  height: 120vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

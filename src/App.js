@@ -6,6 +6,8 @@ import HomePage from "./pages/HomePage";
 import "./App.css";
 import CircularProgress from "@mui/material/CircularProgress";
 import LayOut from "./components/layout/LayOut";
+import NotFounPage from "./pages/NotFounPage";
+import Loading from "./components/loading/Loading";
 function App() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -35,31 +37,26 @@ function App() {
     getDataFromServer();
   }, []);
 
-  console.log(productResponse , "from App");
+  console.log(productResponse, "from App");
 
   if (loading) {
-    return (
-      <div className="progress">
-        <CircularProgress color="neutral" />
-      </div>
-    );
+    return <Loading />;
   }
 
   if (error) {
-    return <div>{error.message}</div>;
+    return <div>{error.message}
+    <NotFounPage/>
+    </div>;
   }
-
 
   const router = createBrowserRouter([
     {
       path: "/",
-      element: <LayOut/>,
+      element: <LayOut />,
       children: [
         {
           path: "/",
-          element: (
-            <HomePage/>
-          ),
+          element: <HomePage />,
         },
         // {
         //   path: "products",
@@ -83,6 +80,7 @@ function App() {
         // { path: "/cart", element: <CartPage /> },
       ],
     },
+    { path: "*", element: <NotFounPage /> },
   ]);
 
   return (
