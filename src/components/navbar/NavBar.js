@@ -12,7 +12,7 @@ export default function NavBar() {
   };
 
   return (
-    <div className="sticky-top" >
+    <div className="sticky-top">
       <div className="navbar-top">
         <div className="contact">Contact Us</div>
         <div className="logo">
@@ -20,13 +20,20 @@ export default function NavBar() {
         </div>
         <div className="icons">
           <i>
-            <FaRegUser />
+            <Link to="/">
+              <FaHeart />
+            </Link>
           </i>
           <i>
-            <FaHeart />
+            <Link to="/">
+              <FaShoppingBasket />
+            </Link>
           </i>
+
           <i>
-            <FaShoppingBasket />
+            <Link to="/register">
+              <FaRegUser />
+            </Link>
           </i>
         </div>
       </div>
@@ -57,12 +64,12 @@ export default function NavBar() {
                 </li>
                 <li className="nav-item">
                   <a className="nav-link" href="#">
-                  <Link to="/gemstone"> Gemstone </Link>  
+                    <Link to="/gemstone"> Gemstone </Link>
                   </a>
                 </li>
                 <li className="nav-item">
                   <a className="nav-link" href="#">
-                  <Link to="/jewelry"> jewelry </Link> 
+                    <Link to="/jewelry"> jewelry </Link>
                   </a>
                 </li>
                 <li className="nav-item">

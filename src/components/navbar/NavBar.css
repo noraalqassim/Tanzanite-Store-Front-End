@@ -11,7 +11,7 @@
 .contact {
     font-weight: 500;
     color:#373737;
-    margin-left: 10px;
+    margin-left: 40px;
     transition: 0.3s ease;
     cursor: pointer;
 }
@@ -25,6 +25,7 @@
     }
 }
 .logo h3{
+    margin-left: 20px;
     color:#38497a;
     text-align: center;
     font-weight: bold;
@@ -34,10 +35,14 @@
         font-size: 20px;
     }
 }
+
+.icons {
+    margin-right: 40px;
+}
 .icons i {
     color:#373737;
     font-size: 20px;
-    margin-left: 20px;
+    /* margin-left: 10px; */
     transition: 0.3s ease;
     cursor: pointer;
 }

@@ -5,6 +5,8 @@ import LayOut from "./components/layout/LayOut";
 import NotFounPage from "./pages/NotFounPage";
 import GemstonePage from "./pages/GemstonePage";
 import JewelryPage from "./pages/JewelryPage";
+import UserRegister from "./components/user/UserRegister";
+import UserLogin from "./components/user/UserLogin";
 function App() {
 
   const router = createBrowserRouter([
@@ -23,23 +25,11 @@ function App() {
         {
           path: "/jewelry",
           element: <JewelryPage />,
-        },
-        // {
-        //   path: "products",
-        //   element: (
-        //     <ProductPage
-        //       // productList={productList}
-        //       setUserInput={setUserInput}
-        //       userInput={userInput}
-        //       wishList={wishList}
-        //       setWishList={setWishList}
-        //     />
-        //   ),
-        // },
-        // {
-        //   path: "products/:productId",
-        //   element: <ProductDetailPage />,
-        // },
+        },{
+          path: "/register", element: <UserRegister/>,
+        },{
+          path: "/login", element: <UserLogin/>,
+        }
 
         // { path: "/wishList", element: <WishListPage wishList={wishList} /> },
 

@@ -1,0 +1,78 @@
+.register{
+    margin-top: 20px;
+}
+
+.MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline {
+    border-color: #38497a !important; 
+}
+
+.custom-text {
+    color: #38497a; 
+}
+
+
+.custom-text-field-label {
+    color: #38497a; 
+}
+
+
+.MuiFormLabel-root.MuiInputLabel-root.Mui-focused {
+    color: #38497a !important; 
+}
+
+
+.custom-text:hover + .MuiInputLabel-root,
+.custom-text:focus + .MuiInputLabel-root {
+    color: #38497a !important;
+}
+
+.custom-button {
+    background-image: url("../../images/tanzaniteBtn2.png"); 
+    background-size: cover;
+    background-position: center;
+    color: rgb(255, 255, 255); 
+    border: none; 
+    border-radius: 5px; 
+    padding: 15px 30px; 
+    font-size: 18px; 
+    font-weight: 500;
+    cursor: pointer; 
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); 
+    transition: transform 0.2s, box-shadow 0.2s, filter 0.3s; 
+    position: relative; 
+    overflow: hidden; 
+}
+ .custom-button2 {
+    background-image: url("../../images/tanzaniteBtn.png"); 
+    background-size: cover;
+    background-position: center;
+    color: rgb(255, 255, 255); 
+    border: none; 
+    border-radius: 5px; 
+    padding: 15px 208px; 
+    font-size: 18px; 
+    font-weight: 500;
+    cursor: pointer; 
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); 
+    transition: transform 0.2s, box-shadow 0.2s, filter 0.3s; 
+    position: relative; 
+    overflow: hidden; 
+}
+
+.custom-button:hover, 
+.custom-button2:hover{
+    transform: translateY(-4px); 
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5); 
+    filter: brightness(1.1); 
+}
+
+.custom-button:active, 
+.custom-button2:active{
+    transform: translateY(2px); 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); 
+}
+
+.have-acount{
+    color: #38497a ;
+    font-size: 17px;
+}
