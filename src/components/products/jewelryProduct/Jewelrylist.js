@@ -21,7 +21,7 @@ export default function Jewelrylist() {
   let offset = (page - 1) * limit;
 
   function getJewelryUrl() {
-    let jewelryUrl = `http://localhost:5125/api/v1/Jewelry?Limit=${limit}&Offset=${offset}&Search=${userInput}`;
+    let jewelryUrl = `http://localhost:5125/api/v1/Jewelry?Limit=${limit}&Offset=${offset}&Search=${userInput}&MinPrice=0&MaxPrice=10000`;
 
     console.log(jewelryUrl, "p");
     return jewelryUrl;

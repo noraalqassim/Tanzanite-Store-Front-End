@@ -3,7 +3,6 @@ import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 
 import hero1 from "../../images/hero1.jpg";
 import hero2 from "../../images/hero2.jpg";
-import hero3 from "../../images/hero3.jpg";
 import "./Hero.css";
 export default function Hero() {
     

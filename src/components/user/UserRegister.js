@@ -96,9 +96,9 @@ export default function UserRegister() {
         sx={{
           display: "flex",
           flexDirection: "column",
-          gap: 2, // Space between fields
-          maxWidth: 500, // Set maximum width to 300px
-          width: "100%", // Ensure the box takes the full width up to maxWidth
+          gap: 2, 
+          maxWidth: 500, 
+          width: "100%", 
           margin: "auto",
           padding: 2,
           backgroundColor: "rgba(255, 255, 255, 0.9)",
