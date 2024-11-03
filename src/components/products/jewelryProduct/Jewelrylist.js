@@ -4,6 +4,7 @@ import Loading from "../../loading/Loading";
 import NotFounPage from "../../../pages/NotFounPage";
 import JewelryPagination from "./JewelryPagination";
 import Search from "../../searsh/Search";
+import Jewelry from "./Jewelry";
 
 export default function Jewelrylist() {
   const [loading, setLoading] = useState(true);
@@ -13,7 +14,7 @@ export default function Jewelrylist() {
   const [page, setPage] = useState(1);
 
   const [jewelryResponse, setJewelryResponse] = useState({
-    products: [],
+    jewelry: [],
     totalCount: 0,
   });
 
@@ -21,17 +22,22 @@ export default function Jewelrylist() {
   let offset = (page - 1) * limit;
 
   function getJewelryUrl() {
-    let jewelryUrl = `http://localhost:5125/api/v1/Jewelry?Limit=${limit}&Offset=${offset}&Search=${userInput}&MinPrice=0&MaxPrice=10000`;
+    let url = `http://localhost:5125/api/v1/Jewelry?Limit=${limit}&Offset=${offset}`;
 
-    console.log(jewelryUrl, "p");
-    return jewelryUrl;
+    if (userInput) {
+      url += `&Search=${userInput}`;
+    }
+
+    console.log(url, "url");
+    return url;
   }
 
   function getData() {
     axios
-      .get(getJewelryUrl(userInput))
+      .get(getJewelryUrl())
       .then((response) => {
         setJewelryResponse(response.data);
+        console.log("API Response:", response.data);
         setLoading(false);
       })
       .catch((error) => {
@@ -62,24 +68,26 @@ export default function Jewelrylist() {
     );
   }
 
-  const { products, totalCount } = jewelryResponse;
-  console.log(jewelryResponse);
+  const  jewelryList= jewelryResponse.jewelry;
+  if (!jewelryList) {
+    return <div>No products found.</div>;
+  }
+  const  totalCount= jewelryResponse.totalCount;
+  
 
   return (
     <div>
-      Jewelrylist
       <h1>Jewelrylist</h1>
       <Search setUserInput={setUserInput} />
       <div className="productList">
-        {products.map((jewelry) => (
-          <div key={jewelry.jewelryId}>
-            <p>{jewelry.jewelryName}</p>
-            <p>{jewelry.jewelryType}</p>
-            <p>{jewelry.jewelryPrice}</p>
-            <img src={jewelry.jewelryImage[0]} alt="Jewelry" />
-            <p>{jewelry.description}</p>
-          </div>
-        ))}
+      {jewelryList.map((jewelryItem) => {
+          return (
+            <Jewelry
+              key={jewelryItem.JewelryId}
+              jewelryItem={jewelryItem}
+            />
+          );
+        })}
       </div>
       <JewelryPagination
         totalCount={totalCount}
