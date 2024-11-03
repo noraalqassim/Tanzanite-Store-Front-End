@@ -29,8 +29,6 @@ export default function JewelryPage(prop) {
       />
       <Jewelrylist
         jewelryList={jewelryList}
-        userInput={userInput}
-        setUserInput={setUserInput}
         wishList={wishList}
         setWishList={setWishList}
         totalCount={totalCount}

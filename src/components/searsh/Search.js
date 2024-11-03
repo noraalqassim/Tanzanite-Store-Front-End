@@ -13,11 +13,11 @@ export default function Search(prop) {
 
   return (
     <div className="search-box">
-      <div class="box">
-        <form class="container-4" onSubmit={handleSearch}>
+      <div className="box">
+        <form className="container-4" onSubmit={handleSearch}>
           <input type="search" id="search"  value={searchValue}
           onChange={(event) => setSearchValue(event.target.value)} placeholder="Search..." />
-          <button class="icon" type="submit">
+          <button className="icon" type="submit">
             <i><IoSearch /></i>
           </button>
         </form>

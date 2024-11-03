@@ -58,19 +58,19 @@ export default function NavBar() {
             >
               <ul className="navbar-nav">
                 <li className="nav-item">
-                  <a className="nav-link">
-                    <Link to="/">Home</Link>
-                  </a>
+                  <Link to="/" className="nav-link">
+                    Home
+                  </Link>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link" href="#">
-                    <Link to="/gemstone"> Gemstone </Link>
-                  </a>
+                  <Link to="/gemstone" className="nav-link">
+                    Gemstone
+                  </Link>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link" href="#">
-                    <Link to="/jewelry"> jewelry </Link>
-                  </a>
+                  <Link to="/jewelry" className="nav-link">
+                    Jewelry
+                  </Link>
                 </li>
                 <li className="nav-item">
                   <a className="nav-link" href="#">

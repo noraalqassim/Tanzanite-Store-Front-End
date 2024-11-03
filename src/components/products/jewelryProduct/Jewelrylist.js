@@ -1,7 +1,7 @@
-import JewelryPagination from "./JewelryPagination";
-import Search from "../../searsh/Search";
+
 import Jewelry from "./Jewelry";
 import "./Jewelrylist.css";
+import ProductPagination from "../../pagination/ProductPagination";
 export default function Jewelrylist(prop) {
   const {
     jewelryList,
@@ -12,7 +12,7 @@ export default function Jewelrylist(prop) {
     handleChange,
     limit
   } = prop;
-
+  console.log("jewelryList props:", jewelryList);
   return (
     <div>
       <div className="productList">
@@ -27,7 +27,7 @@ export default function Jewelrylist(prop) {
           );
         })}
       </div>
-      <JewelryPagination
+      <ProductPagination
         totalCount={totalCount}
         page={page}
         handleChange={handleChange}
