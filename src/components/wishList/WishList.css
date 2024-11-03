@@ -1,0 +1,95 @@
+.wishList {
+  background: #ffffff;
+  box-shadow: 1px 2px 3px 0px rgba(0, 0, 0, 0.1);
+  border-radius: 6px;
+}
+
+.title {
+  border-bottom: 1px solid #e1e8ee;
+  padding: 20px 30px;
+  color: #5e6977;
+  font-size: 50px;
+  font-weight: 400;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.heder {
+  text-align: center;
+}
+
+.cart {
+  margin-top: 20px;
+  background-color: #f9f9f9;
+  padding: 20px;
+}
+
+.col-md-12 {
+  width: 100%;
+}
+
+.col-lg-10 {
+  max-width: 83.33333333%;
+}
+
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cart-item {
+  border: 1px solid #ccc;
+  padding: 15px;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.center-item {
+  display: flex;
+  align-items: center;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.input-group {
+  display: flex;
+  align-items: center;
+}
+
+.number-spinner {
+  margin-bottom: 10px;
+}
+
+.btn {
+  padding: 5px 10px;
+  background-color: #f1f1f1;
+  border: none;
+  cursor: pointer;
+}
+
+.form-control {
+  width: 50px;
+  text-align: center;
+}
+
+.remove-item {
+  max-width: 100%;
+  height: auto;
+  cursor: pointer;
+}
