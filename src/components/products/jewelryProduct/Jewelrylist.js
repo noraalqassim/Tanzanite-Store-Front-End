@@ -1,10 +1,18 @@
-
 import JewelryPagination from "./JewelryPagination";
 import Search from "../../searsh/Search";
 import Jewelry from "./Jewelry";
 import "./Jewelrylist.css";
 export default function Jewelrylist(prop) {
-  const { jewelryList, wishList, setWishList, totalCount, page, handleChange } = prop;
+  const {
+    jewelryList,
+    wishList,
+    setWishList,
+    totalCount,
+    page,
+    handleChange,
+    limit
+  } = prop;
+
   return (
     <div>
       <div className="productList">
@@ -19,10 +27,12 @@ export default function Jewelrylist(prop) {
           );
         })}
       </div>
-      <JewelryPagination 
-      totalCount={totalCount}
-      page = {page}
-      handleChange={handleChange}/>
+      <JewelryPagination
+        totalCount={totalCount}
+        page={page}
+        handleChange={handleChange}
+        limit={limit}
+      />
     </div>
   );
 }

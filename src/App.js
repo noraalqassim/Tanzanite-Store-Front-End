@@ -23,6 +23,7 @@ function App() {
   const [maxPrice, setMaxPrice] = useState(1000);
 
   console.log(minPrice, maxPrice, "price");
+
   const handleChange = (event, value) => {
     setPage(value);
   };
@@ -68,11 +69,7 @@ function App() {
 
   useEffect(() => {
     getData();
-  }, [offset, limit, userInput, minPrice, maxPrice]);
-
-  const handlePageChange = (event, value) => {
-    setPage(value);
-  };
+  }, [offset, limit,userInput, minPrice, maxPrice]);
 
   if (loadingJewelry) {
     return <Loading/>;
@@ -86,6 +83,9 @@ function App() {
       </div>
     );
   }
+
+  //gemstone product
+
 
   const router = createBrowserRouter([
     {
@@ -114,6 +114,7 @@ function App() {
               handleChange={handleChange}
               setMinPrice={setMinPrice}
               setMaxPrice={setMaxPrice}
+              limit={limit}
             />
           ),
         },

@@ -15,20 +15,28 @@ export default function JewelryPage(prop) {
     handleChange,
     setMinPrice,
     setMaxPrice,
+    limit
   } = prop;
+
+ 
   return (
     <div>
       <p>JewelryPage </p>
       <Search setUserInput={setUserInput} />
-      <JewelryPriceRangeForm setMinPrice={setMinPrice} setMaxPrice={setMaxPrice} />
+      <JewelryPriceRangeForm
+        setMinPrice={setMinPrice}
+        setMaxPrice={setMaxPrice}
+      />
       <Jewelrylist
-      jewelryList={jewelryList}
-      userInput={userInput}
-      wishList={wishList}
-      setWishList={setWishList}
-      totalCount={totalCount}
-      page={page}
-      handleChange={handleChange}
+        jewelryList={jewelryList}
+        userInput={userInput}
+        setUserInput={setUserInput}
+        wishList={wishList}
+        setWishList={setWishList}
+        totalCount={totalCount}
+        page={page}
+        handleChange={handleChange}
+        limit={limit}
       />
     </div>
   );

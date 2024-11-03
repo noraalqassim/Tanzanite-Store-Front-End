@@ -1,29 +1,73 @@
 .search-box {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 20px;
-  }
-  .search {
-    width: 600px;
-    height: 50px;
-    background-color: #fcf5ed;
-    border-radius: 30px;
-    display: flex;
-    align-items: center;
-    padding: 20px;
-  }
-  .lable-Searsh {
-    font-size: 28px;
-    color: #897147;
-  }
-  .input-Searsh {
-    flex: 1;
-    height: 30px;
-    border: none;
-    outline: none;
-    font-size: 18px;
-    color: #897147;
-    padding-left: 10px;
-    background-color: #fcf5ed;
-  }
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container-4{
+  overflow: hidden;
+  width: 500px;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+.container-4 input#search{
+  width: 500px;
+  height: 50px;
+  background: #afafaf33;
+  border: none !important;
+  font-size: 15pt;
+  float: left;
+  color: #38497a;
+  padding-left: 15px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}
+
+.container-4 input#search::-webkit-input-placeholder {
+  color: #65737e;
+  border: none !important;
+}
+.container-4 input#search:-moz-placeholder { 
+  color: #65737e;
+    border: none !important;
+}
+.container-4 input#search::-moz-placeholder {
+  color: #65737e;  
+  border: none !important;
+}
+.container-4 input#search:-ms-input-placeholder {  
+  color: #65737e;  
+  border: none !important;
+}
+
+.container-4 button.icon{
+  -webkit-border-top-right-radius: 5px;
+  -webkit-border-bottom-right-radius: 5px;
+  -moz-border-radius-topright: 5px;
+  -moz-border-radius-bottomright: 5px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border: none;
+  background: #8faff4;
+  height: 50px;
+  width: 50px;
+  color: #ffffff;
+  opacity: 0;
+  font-size: 20pt;
+  -webkit-transition: all .55s ease;
+  -moz-transition: all .55s ease;
+  -ms-transition: all .55s ease;
+  -o-transition: all .55s ease;
+  transition: all .55s ease;
+}
+
+.container-4:hover button.icon, .container-4:active button.icon, .container-4:focus button.icon{
+  outline: none;
+  opacity: 1;
+  margin-left: -50px;
+}
+.container-4:hover button.icon:hover{
+  background: #5578c5;
+}
