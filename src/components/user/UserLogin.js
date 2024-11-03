@@ -113,10 +113,7 @@ export default function UserLogIn() {
           className="custom-password-input custom-text"
         />
       </FormControl>
-      <button
-        className="custom-button"
-        onClick={logInUser} 
-      > LogIn</button>
+      <Button className="custom-button" onClick={logInUser}> LogIn</Button>
     </Box></div>
   );
 }

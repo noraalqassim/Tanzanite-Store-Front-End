@@ -10,6 +10,7 @@ import {
   OutlinedInput,
   InputAdornment,
   IconButton,
+  Button
 } from "@mui/material";
 import Visibility from "@mui/icons-material/Visibility";
 import VisibilityOff from "@mui/icons-material/VisibilityOff";
@@ -161,14 +162,11 @@ export default function UserRegister() {
             className="custom-password-input custom-text"
           />
         </FormControl>
-
-        <button className="custom-button" onClick={registerNewUser}>
-          Register
-        </button>
+        <Button className="custom-button" onClick={registerNewUser}> Register</Button>
 
         <h6 className="have-acount">Already have an account? Log in here!</h6>
         <Link to="/login" className='login-link' >
-          <button className="custom-button2">Log In</button>
+          <button  className="custom-button2">Log In</button>
         </Link>
       </Box>
     </div>

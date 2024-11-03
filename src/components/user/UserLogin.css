@@ -30,11 +30,11 @@
     background-image: url("../../images/tanzaniteBtn2.png"); 
     background-size: cover;
     background-position: center;
-    color: rgb(255, 255, 255); 
+    color: rgb(255, 255, 255) !important; 
     border: none; 
     border-radius: 5px; 
-    padding: 15px 30px; 
-    font-size: 18px; 
+    padding: 15px 30px !important; 
+    font-size: 18px !important;  
     font-weight: 500;
     cursor: pointer; 
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); 
