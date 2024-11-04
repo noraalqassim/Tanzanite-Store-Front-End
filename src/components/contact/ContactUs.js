@@ -41,7 +41,7 @@ export const ContactUs = () => {
               type="text"
               name="user_name"
               id="formName"
-              className="form-control form-control-lg thick"
+              className="thick"
               placeholder="Name"
             />
           </div>
@@ -54,16 +54,16 @@ export const ContactUs = () => {
               type="email"
               name="user_email"
               id="formEmail"
-              className="form-control form-control-lg thick"
+              className="thick contact-input"
               placeholder="E-mail"
             />
           </div>
 
           <div className="form-group message">
             <textarea
+              className="textarea"
               name="message"
               id="formMessage"
-              className="form-control form-control-lg"
               rows="7"
               placeholder="Mensagem"
             ></textarea>
