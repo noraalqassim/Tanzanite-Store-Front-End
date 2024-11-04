@@ -2,8 +2,6 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import React, {
   useEffect,
   useState,
-  useGemstoneState,
-  useGemstoneEffect,
 } from "react";
 import axios from "axios";
 
@@ -16,8 +14,12 @@ import GemstonePage from "./pages/GemstonePage";
 import JewelryPage from "./pages/JewelryPage";
 import UserRegister from "./components/user/UserRegister";
 import UserLogin from "./components/user/UserLogin";
+import { ContactUs } from "./components/contact/ContactUs";
+import WishListPage from "./pages/WishListPage";
 function App() {
   const [wishList, setWishList] = useState([]);
+  console.log(wishList, "wishList");
+
   const [userInput, setUserInput] = useState("");
   const [page, setPage] = useState(1);
   const [minPrice, setMinPrice] = useState(0);
@@ -80,9 +82,9 @@ function App() {
 
   const getGemstoneData = async () => {
     try {
-      const response = await axios.get(getGemstoneUrl());
-      console.log("API Gemstone Response:", response.data);
-      setGemstoneResponse(response.data);
+      const responseg = await axios.get(getGemstoneUrl());
+      setGemstoneResponse(responseg.data);
+      console.log("API Gemstone Response:", responseg.data);
       setLoadingGemstone(false);
     } catch (error) {
       console.error("Error fetching gemstone products: ", error);
@@ -119,11 +121,14 @@ function App() {
   const router = createBrowserRouter([
     {
       path: "/",
-      element: <LayOut />,
+      element: <LayOut wishList={wishList}/>,
       children: [
         {
           path: "/",
           element: <HomePage />,
+        },{
+          path: "/contactUs",
+          element: <ContactUs />,
         },
         {
           path: "/gemstone",
@@ -131,7 +136,6 @@ function App() {
             <GemstonePage
               gemstoneList={gemstoneResponse.gemstone}
               setUserInput={setUserInput}
-              userInput={userInput}
               wishList={wishList}
               setWishList={setWishList}
               totalCount={gemstoneResponse.totalCount}
@@ -170,7 +174,7 @@ function App() {
           element: <UserLogin />,
         },
 
-        // { path: "/wishList", element: <WishListPage wishList={wishList} /> },
+        { path: "/wishList", element: <WishListPage wishList={wishList}/> },
 
         // { path: "/cart", element: <CartPage /> },
       ],

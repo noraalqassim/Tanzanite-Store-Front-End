@@ -18,7 +18,7 @@ export default function JewelryPage(prop) {
     limit
   } = prop;
 
- 
+  console.log("jewelry List in Page:", jewelryList);
   return (
     <div>
       <p>JewelryPage </p>

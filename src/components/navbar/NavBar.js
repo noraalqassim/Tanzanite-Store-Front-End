@@ -14,13 +14,15 @@ export default function NavBar() {
   return (
     <div className="sticky-top">
       <div className="navbar-top">
-        <div className="contact">Contact Us</div>
+        <div className="contact">
+          <Link to="/contactUs" style={{ textDecoration: 'none' }}>Contact Us</Link>
+          </div>
         <div className="logo">
           <h3>Tanzanite Store</h3>
         </div>
         <div className="icons">
           <i>
-            <Link to="/">
+            <Link to="/wishList">
               <FaHeart />
             </Link>
           </i>

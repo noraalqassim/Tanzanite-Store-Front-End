@@ -1,6 +1,6 @@
 import React from "react";
 
-import "../whishlist/WishListItem.css";
+import "./WishListItem.css";
 import { MdDeleteOutline } from "react-icons/md";
 export default function WishListItem(prop) {
   const { item, deleteItem } = prop;

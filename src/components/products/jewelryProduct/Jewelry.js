@@ -4,6 +4,7 @@ import "./Jewelry.css";
 import { FaHeart } from "react-icons/fa6";
 export default function Jewelry(prop) {
   const { jewelryItem, wishList, setWishList } = prop;
+  
   const isFavorited = wishList.some(
     (item) => item.id === jewelryItem.jewelryId
   );

@@ -5,9 +5,8 @@ import GemstonePriceRangeForm from "../components/products/gemstoneProducts/Gems
 
 export default function GemstonePage(prop) {
   const {
-    gemstoneList = [],
+    gemstoneList,
     setUserInput,
-    userInput,
     wishList,
     setWishList,
     totalCount,
@@ -17,6 +16,7 @@ export default function GemstonePage(prop) {
     setMaxPrice,
     limit,
   } = prop;
+  
 
   console.log("Gemstone List in Page:", gemstoneList);
   return (
