@@ -17,7 +17,7 @@ export default function GemstoneList(prop) {
   return (
     <div>
       <div className="productList">
-        {gemstoneList&&gemstoneList.map((gemstoneItem) => {
+        {gemstoneList.map((gemstoneItem) => {
           return (
             <Gemstone
               key={gemstoneItem.gemstoneId}

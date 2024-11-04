@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 import "./UserLogin.css";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import {
   Button,
   TextField,
@@ -15,7 +15,8 @@ import {
 import Visibility from "@mui/icons-material/Visibility";
 import VisibilityOff from "@mui/icons-material/VisibilityOff";
 import axios from "axios";
-export default function UserLogIn() {
+export default function UserLogIn(prop) {
+  const { getUserData } = prop;
   const [userLogIn, setUserLogIn] = useState({
     email: "",
     password: "",
@@ -41,12 +42,17 @@ export default function UserLogIn() {
         console.log(res, "response from log in");
         // token = res.data
         if (res.status === 200) {
-          // save to local storage
           localStorage.setItem("token", res.data);
-          navigate("/");
         }
       })
-      .catch((error) => console.log(error));
+      .then(() => getUserData())
+      .then(() => navigate("/profile"))
+      .catch((error) => {
+        console.log(error);
+        if (error.response.status === 401) {
+          alert(error.response.data.message);
+        }
+      });
   }
 
   //show password
@@ -61,59 +67,69 @@ export default function UserLogIn() {
     event.preventDefault();
   };
 
+  //NoraUser@gmail.com ->Norh1234567890n
   return (
     <div className="login">
-    <Box
-      component="form"
-      sx={{
-        display: "flex",
-        flexDirection: "column",
-        gap: 2, // Space between fields
-        maxWidth: 500,
-        margin: "auto",
-        padding: 2,
-        backgroundColor: "rgba(255, 255, 255, 0.9)",
-        borderRadius: 2, 
-        boxShadow: 2, 
-      }}
-    >
-      <h1>Log In</h1>
-      <TextField
-        id="email"
-        label="Email"
-        variant="outlined"
-        onChange={onChangeHandlerEmailLogIn}
-        InputProps={{ className: "custom-text" }}
-        InputLabelProps={{ className: "custom-text-field-label" }}
-      />
-      <FormControl variant="outlined">
-        <InputLabel htmlFor="password" className="custom-text-field-label">
-          Password
-        </InputLabel>
-        <OutlinedInput
-          id="password"
-          type={showPassword ? "text" : "password"}
-          endAdornment={
-            <InputAdornment position="end">
-              <IconButton
-                aria-label={
-                  showPassword ? "hide the password" : "display the password"
-                }
-                onClick={handleClickShowPassword}
-                onMouseDown={handleMouseDownPassword}
-                onMouseUp={handleMouseUpPassword}
-                edge="end"
-              >
-                {showPassword ? <VisibilityOff /> : <Visibility />}
-              </IconButton>
-            </InputAdornment>
-          }
-          label="Password"
-          onChange={onChangeHandlerPasswordLogIn}
-          className="custom-password-input custom-text"
+      <Box
+        component="form"
+        sx={{
+          display: "flex",
+          flexDirection: "column",
+          gap: 2, // Space between fields
+          maxWidth: 500,
+          margin: "auto",
+          padding: 2,
+          backgroundColor: "rgba(255, 255, 255, 0.9)",
+          borderRadius: 2,
+          boxShadow: 2,
+        }}
+      >
+        <h1>Log In</h1>
+        <TextField
+          id="email"
+          label="Email"
+          variant="outlined"
+          onChange={onChangeHandlerEmailLogIn}
+          InputProps={{ className: "custom-text" }}
+          InputLabelProps={{ className: "custom-text-field-label" }}
         />
-      </FormControl>
-      <Button className="custom-button" onClick={logInUser}> LogIn</Button>
-    </Box></div>
+        <FormControl variant="outlined">
+          <InputLabel htmlFor="password" className="custom-text-field-label">
+            Password
+          </InputLabel>
+          <OutlinedInput
+            id="password"
+            type={showPassword ? "text" : "password"}
+            endAdornment={
+              <InputAdornment position="end">
+                <IconButton
+                  aria-label={
+                    showPassword ? "hide the password" : "display the password"
+                  }
+                  onClick={handleClickShowPassword}
+                  onMouseDown={handleMouseDownPassword}
+                  onMouseUp={handleMouseUpPassword}
+                  edge="end"
+                >
+                  {showPassword ? <VisibilityOff /> : <Visibility />}
+                </IconButton>
+              </InputAdornment>
+            }
+            label="Password"
+            onChange={onChangeHandlerPasswordLogIn}
+            className="custom-password-input custom-text"
+          />
+        </FormControl>
+        <Button className="custom-button" onClick={logInUser}>
+          {" "}
+          LogIn
+        </Button>
+
+        <h6 className="have-acount">You dont have an account? Register now!</h6>
+        <Link to="/register" className="login-link">
+          <button className="custom-button2">Register</button>
+        </Link>
+      </Box>
+    </div>
   );
 }

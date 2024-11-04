@@ -3,9 +3,14 @@ import React, { useState } from "react";
 import "./NavBar.css";
 import { Link } from "react-router-dom";
 import { IoMenu } from "react-icons/io5";
+import { FaUserAltSlash } from "react-icons/fa";
 import { FaRegUser, FaHeart, FaShoppingBasket } from "react-icons/fa";
-export default function NavBar() {
+import Badge from "@mui/material/Badge";
+export default function NavBar(prop) {
+  const { wishList, isAuthenticated, userData } = prop;
   const [isCollapsed, setIsCollapsed] = useState(true);
+
+  const arrayLength = wishList.length;
 
   const toggleNavbar = () => {
     setIsCollapsed(!isCollapsed);
@@ -15,16 +20,20 @@ export default function NavBar() {
     <div className="sticky-top">
       <div className="navbar-top">
         <div className="contact">
-          <Link to="/contactUs" style={{ textDecoration: 'none' }}>Contact Us</Link>
-          </div>
+          <Link to="/contactUs" style={{ textDecoration: "none" }}>
+            Contact Us
+          </Link>
+        </div>
         <div className="logo">
           <h3>Tanzanite Store</h3>
         </div>
         <div className="icons">
           <i>
-            <Link to="/wishList">
-              <FaHeart />
-            </Link>
+            <Badge badgeContent={arrayLength} color="primary">
+              <Link to="/wishList">
+                <FaHeart />
+              </Link>
+            </Badge>
           </i>
           <i>
             <Link to="/">
@@ -33,9 +42,15 @@ export default function NavBar() {
           </i>
 
           <i>
-            <Link to="/register">
-              <FaRegUser />
-            </Link>
+            {isAuthenticated ? (
+              <Link to="/profile">
+                <FaRegUser />
+              </Link>
+            ) : (
+              <Link to="/login">
+                <FaUserAltSlash />
+              </Link>
+            )}
           </i>
         </div>
       </div>

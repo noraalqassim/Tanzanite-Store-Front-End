@@ -1,18 +1,20 @@
-.search-box {
+.search-box{
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.container-4{
+
+.container-4 {
+  position: relative;
   overflow: hidden;
-  width: 500px;
+  width: 600px;
   vertical-align: middle;
   white-space: nowrap;
 }
 
-.container-4 input#search{
-  width: 500px;
+.container-4 .input-search#search {
+  width: 80%;
   height: 50px;
   background: #afafaf33;
   border: none !important;
@@ -20,33 +22,30 @@
   float: left;
   color: #38497a;
   padding-left: 15px;
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
   border-radius: 5px;
 }
 
-.container-4 input#search::-webkit-input-placeholder {
+.container-4 .input-search#search::-webkit-input-placeholder {
   color: #65737e;
-  border: none !important;
-}
-.container-4 input#search:-moz-placeholder { 
-  color: #65737e;
-    border: none !important;
-}
-.container-4 input#search::-moz-placeholder {
-  color: #65737e;  
-  border: none !important;
-}
-.container-4 input#search:-ms-input-placeholder {  
-  color: #65737e;  
   border: none !important;
 }
 
-.container-4 button.icon{
-  -webkit-border-top-right-radius: 5px;
-  -webkit-border-bottom-right-radius: 5px;
-  -moz-border-radius-topright: 5px;
-  -moz-border-radius-bottomright: 5px;
+.container-4 input#search:-moz-placeholder {
+  color: #65737e;
+  border: none !important;
+}
+
+.container-4 input#search::-moz-placeholder {
+  color: #65737e;
+  border: none !important;
+}
+
+.container-4 input#search:-ms-input-placeholder {
+  color: #65737e;
+  border: none !important;
+}
+
+.container-4 .btn-searsh.icon {
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
   border: none;
@@ -54,20 +53,14 @@
   height: 50px;
   width: 50px;
   color: #ffffff;
-  opacity: 0;
   font-size: 20pt;
-  -webkit-transition: all .55s ease;
-  -moz-transition: all .55s ease;
-  -ms-transition: all .55s ease;
-  -o-transition: all .55s ease;
-  transition: all .55s ease;
+  transition: all 0.55s ease;
+  /* position: absolute; */
+  left: 477px;
+  top: 0;
 }
 
-.container-4:hover button.icon, .container-4:active button.icon, .container-4:focus button.icon{
-  outline: none;
-  opacity: 1;
-  margin-left: -50px;
-}
-.container-4:hover button.icon:hover{
+
+.container-4:hover .btn-searsh.icon:hover {
   background: #5578c5;
 }

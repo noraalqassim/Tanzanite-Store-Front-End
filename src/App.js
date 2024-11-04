@@ -1,8 +1,5 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import React, {
-  useEffect,
-  useState,
-} from "react";
+import React, { useEffect, useState } from "react";
 import axios from "axios";
 
 import "./App.css";
@@ -16,6 +13,8 @@ import UserRegister from "./components/user/UserRegister";
 import UserLogin from "./components/user/UserLogin";
 import { ContactUs } from "./components/contact/ContactUs";
 import WishListPage from "./pages/WishListPage";
+import UserProfile from "./components/user/UserProfile";
+import ProtectedRoute from "./components/user/ProtectedRoute";
 function App() {
   const [wishList, setWishList] = useState([]);
   console.log(wishList, "wishList");
@@ -36,7 +35,7 @@ function App() {
   const [loadingGemstone, setLoadingGemstone] = useState(true);
   const [gemstoneError, setGemstoneError] = useState(null);
   const [gemstoneResponse, setGemstoneResponse] = useState({
-    gemstone: [],
+    gemstones: [],
     totalCount: 0,
   });
 
@@ -102,6 +101,38 @@ function App() {
   useEffect(() => {
     getGemstoneData();
   }, [offset, userInput, minPrice, maxPrice]);
+  console.log("Gemstone Response:", gemstoneResponse);
+
+  //profile
+  const [loadingUserData, setLoadingUserData] = useState(true);
+  const [userData, setUserData] = useState(null);
+
+  function getUserData() {
+    setLoadingUserData(true);
+    const token = localStorage.getItem("token");
+    axios
+      .get("http://localhost:5125/api/v1/User/Profile", {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      })
+      .then((resp) => {
+        setUserData(resp.data);
+        console.log("API Profile Response:", resp.data);
+        setLoadingUserData(false);
+      })
+      .catch((error) => {
+        console.log("Profile error:", error);
+        setLoadingUserData(false);
+      });
+  }
+
+  useEffect(() => {
+    getUserData();
+  }, []);
+  console.log("user data from app:",userData);
+
+  let isAuthenticated = userData ? true : false;
 
   if (loadingJewelry || loadingGemstone) {
     return <Loading />;
@@ -116,17 +147,18 @@ function App() {
     );
   }
 
-  console.log("Gemstone Response:", gemstoneResponse);
-
   const router = createBrowserRouter([
     {
       path: "/",
-      element: <LayOut wishList={wishList}/>,
+      element: <LayOut wishList={wishList}
+      isAuthenticated={isAuthenticated}
+      userData={userData}/>,
       children: [
         {
           path: "/",
           element: <HomePage />,
-        },{
+        },
+        {
           path: "/contactUs",
           element: <ContactUs />,
         },
@@ -134,7 +166,7 @@ function App() {
           path: "/gemstone",
           element: (
             <GemstonePage
-              gemstoneList={gemstoneResponse.gemstone}
+              gemstoneList={gemstoneResponse.gemstones}
               setUserInput={setUserInput}
               wishList={wishList}
               setWishList={setWishList}
@@ -171,10 +203,16 @@ function App() {
         },
         {
           path: "/login",
-          element: <UserLogin />,
+          element: <UserLogin getUserData={getUserData}/>,
+        },
+        { path: "/profile",
+          element: <ProtectedRoute
+          loadingUserData={loadingUserData}
+          isAuthenticated={isAuthenticated}
+          element={<UserProfile userData={userData} setUserData={setUserData}/>}/>
         },
 
-        { path: "/wishList", element: <WishListPage wishList={wishList}/> },
+        { path: "/wishList", element: <WishListPage wishList={wishList} /> },
 
         // { path: "/cart", element: <CartPage /> },
       ],

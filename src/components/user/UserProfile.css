@@ -1,0 +1,23 @@
+.user-profile-container {
+    max-width: 400px;
+    margin: auto;
+  }
+  
+  .user-profile-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .user-profile-field {
+    display: flex;
+    align-items: center;
+  }
+  
+  .user-profile-field button {
+    margin-left: 10px;
+  }
+  
+  .user-profile-button {
+    margin-top: 20px;
+  }
