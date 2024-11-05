@@ -1,9 +1,8 @@
-import React,{useEffect} from "react";
+import React, { useEffect } from "react";
 
 import "./WishList.css";
 import WishListItem from "./WishListItem";
 import emptyWishlist from "../../images/EmptyWishlist.png";
-import WishListGem from "./WishListGem";
 export default function WishList(prop) {
   const { wishList, setWishList } = prop;
 
@@ -22,7 +21,17 @@ export default function WishList(prop) {
   }
 
   function deleteItem(itemId) {
-    const updatedWishList = wishList.filter((item) => item.id !== itemId);
+    const updatedWishList = wishList.filter(
+      (item) => item.jewelryId !== itemId
+    );
+    setWishList(updatedWishList);
+    localStorage.setItem("wishList", JSON.stringify(updatedWishList));
+  }
+
+  function deleteItemGem(itemId) {
+    const updatedWishList = wishList.filter(
+      (item) => item.jewelryId !== itemId
+    );
     setWishList(updatedWishList);
     localStorage.setItem("wishList", JSON.stringify(updatedWishList));
   }
@@ -34,7 +43,11 @@ export default function WishList(prop) {
       <br />
       {wishList.map((item) => {
         return (
-          <WishListItem key={item.id} item={item} deleteItem={deleteItem} />
+          <WishListItem
+            key={item.jewelryId}
+            item={item}
+            deleteItem={deleteItem}
+          />
         );
       })}
       <br />

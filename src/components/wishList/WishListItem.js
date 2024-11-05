@@ -6,7 +6,7 @@ export default function WishListItem(prop) {
   const { item, deleteItem } = prop;
 
   const handleDelete = () => {
-    deleteItem(item.id);
+    deleteItem(item.jewelryId);
   };
   return (
     <div className="wishlist-border">

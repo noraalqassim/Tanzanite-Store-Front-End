@@ -16,7 +16,7 @@ import WishListPage from "./pages/WishListPage";
 import UserProfile from "./components/user/UserProfile";
 import ProtectedRoute from "./components/user/ProtectedRoute";
 import JewelryDetialsPage from "./pages/JewelryDetialsPage";
-import GemstoneDetailsPage from"./pages/GemstoneDetailsPage";
+import GemstoneDetailsPage from "./pages/GemstoneDetailsPage";
 function App() {
   const [wishList, setWishList] = useState([]);
   console.log(wishList, "wishList");
@@ -132,7 +132,7 @@ function App() {
   useEffect(() => {
     getUserData();
   }, []);
-  console.log("user data from app:",userData);
+  console.log("user data from app:", userData);
 
   let isAuthenticated = userData ? true : false;
 
@@ -152,9 +152,13 @@ function App() {
   const router = createBrowserRouter([
     {
       path: "/",
-      element: <LayOut wishList={wishList}
-      isAuthenticated={isAuthenticated}
-      userData={userData}/>,
+      element: (
+        <LayOut
+          wishList={wishList}
+          isAuthenticated={isAuthenticated}
+          userData={userData}
+        />
+      ),
       children: [
         {
           path: "/",
@@ -213,13 +217,19 @@ function App() {
         },
         {
           path: "/login",
-          element: <UserLogin getUserData={getUserData}/>,
+          element: <UserLogin getUserData={getUserData} />,
         },
-        { path: "/profile",
-          element: <ProtectedRoute
-          loadingUserData={loadingUserData}
-          isAuthenticated={isAuthenticated}
-          element={<UserProfile userData={userData} setUserData={setUserData}/>}/>
+        {
+          path: "/profile",
+          element: (
+            <ProtectedRoute
+              loadingUserData={loadingUserData}
+              isAuthenticated={isAuthenticated}
+              element={
+                <UserProfile userData={userData} setUserData={setUserData} />
+              }
+            />
+          ),
         },
 
         { path: "/wishList", element: <WishListPage wishList={wishList} setWishList={setWishList}/> },

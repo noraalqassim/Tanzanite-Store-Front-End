@@ -1,34 +1,32 @@
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import "./Jewelry.css";
-import { FaHeart } from "react-icons/fa";
+import { FaHeart } from "react-icons/fa6"
 
 export default function Jewelry(prop) {
   const { jewelryItem, wishList, setWishList } = prop;
 
-  const isFavorited = wishList.some((item) => item.id === jewelryItem.jewelryId);
+  const isFavorited = wishList.some((item) => item.jewelryId === jewelryItem.jewelryId);
 
   useEffect(() => {
     const storedWishList = localStorage.getItem("wishList");
+    const storedIsFavorited = localStorage.getItem("isFavorited");
+
     if (storedWishList) {
       setWishList(JSON.parse(storedWishList));
     }
   }, []);
 
   function addToFav(jewelryItem) {
-    const isInclude = wishList.some((item) => item.id === jewelryItem.jewelryId);
+    const isInclude = wishList.some((item) => item.jewelryId === jewelryItem.jewelryId);
     if (!isInclude) {
       const updatedWishList = [...wishList, jewelryItem];
       setWishList(updatedWishList);
-
       localStorage.setItem("wishList", JSON.stringify(updatedWishList));
-      localStorage.setItem("isFavorited", JSON.stringify(true));
     } else {
-      const updatedWishList = wishList.filter((item) => item.id !== jewelryItem.jewelryId);
+      const updatedWishList = wishList.filter((item) => item.jewelryId !== jewelryItem.jewelryId);
       setWishList(updatedWishList);
-
       localStorage.setItem("wishList", JSON.stringify(updatedWishList));
-      localStorage.setItem("isFavorited", JSON.stringify(false));
     }
   }
 
@@ -48,7 +46,7 @@ export default function Jewelry(prop) {
           <div className="wishList">
             <a
               onClick={() => addToFav(jewelryItem)}
-              style={{ color: isFavorited ? "#85654d" : "#BF9270" }}
+              style={{ color: isFavorited ? "#38497a" : "#BF9270" }}
             >
               <FaHeart />
             </a>

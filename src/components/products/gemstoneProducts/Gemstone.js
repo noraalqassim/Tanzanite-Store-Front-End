@@ -6,7 +6,7 @@ export default function Gemstone(prop) {
 
     const { gemstoneItem, wishList, setWishList } = prop;
     const isFavorited = wishList.some(
-      (item) => item.id === gemstoneItem.gemstoneId
+      (item) => item.gemstoneId === gemstoneItem.gemstoneId
     );
   
     useEffect(() => {
@@ -20,7 +20,7 @@ export default function Gemstone(prop) {
   
     function addToFav(gemstoneItem) {
       const isInclude = wishList.some(
-        (item) => item.id === gemstoneItem.gemstoneId
+        (item) => item.gemstoneId === gemstoneItem.gemstoneId
       );
       if (!isInclude) {
         const updatedWishList = [...wishList, gemstoneItem];
@@ -31,7 +31,7 @@ export default function Gemstone(prop) {
       } else {
         if (isInclude) {
           const updatedWishList = wishList.filter(
-            (item) => item.id !== gemstoneItem.gemstoneId
+            (item) => item.gemstoneId !== gemstoneItem.gemstoneId
           );
           setWishList(updatedWishList);
   
