@@ -15,6 +15,8 @@ import { ContactUs } from "./components/contact/ContactUs";
 import WishListPage from "./pages/WishListPage";
 import UserProfile from "./components/user/UserProfile";
 import ProtectedRoute from "./components/user/ProtectedRoute";
+import JewelryDetialsPage from "./pages/JewelryDetialsPage";
+import GemstoneDetailsPage from"./pages/GemstoneDetailsPage";
 function App() {
   const [wishList, setWishList] = useState([]);
   console.log(wishList, "wishList");
@@ -180,6 +182,10 @@ function App() {
           ),
         },
         {
+          path: "/gemstone/:gemstoneId",
+          element: <GemstoneDetailsPage />,
+        },
+        {
           path: "/jewelry",
           element: (
             <JewelryPage
@@ -198,6 +204,10 @@ function App() {
           ),
         },
         {
+          path: "/jewelry/:jewelryId",
+          element: <JewelryDetialsPage />,
+        },
+        {
           path: "/register",
           element: <UserRegister />,
         },
@@ -212,7 +222,7 @@ function App() {
           element={<UserProfile userData={userData} setUserData={setUserData}/>}/>
         },
 
-        { path: "/wishList", element: <WishListPage wishList={wishList} /> },
+        { path: "/wishList", element: <WishListPage wishList={wishList} setWishList={setWishList}/> },
 
         // { path: "/cart", element: <CartPage /> },
       ],

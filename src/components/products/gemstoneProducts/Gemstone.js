@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react'
 
+import {Link} from "react-router-dom";
 import { FaHeart } from "react-icons/fa6";
 export default function Gemstone(prop) {
 
@@ -48,10 +49,9 @@ export default function Gemstone(prop) {
       <div className="details">
         <span className="category">{gemstoneItem.category.categoryName}</span>
         <h4>
-          {gemstoneItem.gemstoneType}
-          {/* <Link to={`${jewelryItem.JewelryId}`}>
-            <a href="">{jewelryItem.JewelryName}</a>
-          </Link> */}
+          <Link to={`${gemstoneItem.gemstoneId}`}>
+            <a href="">{gemstoneItem.gemstoneType}</a>
+          </Link>
         </h4>
         <div className="botton-details">
           <div className="price"> ${gemstoneItem.gemstonePrice}</div>
