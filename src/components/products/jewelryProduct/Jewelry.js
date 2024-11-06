@@ -37,7 +37,7 @@ export default function Jewelry(prop) {
       </div>
       <div className="details">
         <h4>
-          <Link to={`/${jewelryItem.jewelryId}`}>
+          <Link to={`${jewelryItem.jewelryId}`}>
             {jewelryItem.jewelryName}
           </Link>
         </h4>
