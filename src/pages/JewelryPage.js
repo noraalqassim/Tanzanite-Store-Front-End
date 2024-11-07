@@ -1,7 +1,7 @@
 import React from "react";
-import Jewelrylist from "../components/products/jewelryProduct/Jewelrylist";
+import Jewelrylist from "../components/products/Jewelrylist";
 import Search from "../components/searsh/Search";
-import JewelryPriceRangeForm from "../components/products/jewelryProduct/JewelryPriceRangeForm";
+import JewelryPriceRangeForm from "../components/products/JewelryPriceRangeForm";
 
 export default function JewelryPage(prop) {
   const {

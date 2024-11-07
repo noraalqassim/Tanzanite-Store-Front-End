@@ -7,7 +7,6 @@ import Loading from "./components/loading/Loading";
 import NotFounPage from "./components/error/NotFound";
 import HomePage from "./pages/HomePage";
 import LayOut from "./components/layout/LayOut";
-import GemstonePage from "./pages/GemstonePage";
 import JewelryPage from "./pages/JewelryPage";
 import UserRegister from "./components/user/UserRegister";
 import UserLogin from "./components/user/UserLogin";
@@ -16,7 +15,7 @@ import WishListPage from "./pages/WishListPage";
 import UserProfile from "./components/user/UserProfile";
 import ProtectedRoute from "./components/user/ProtectedRoute";
 import JewelryDetialsPage from "./pages/JewelryDetialsPage";
-import GemstoneDetailsPage from "./pages/GemstoneDetailsPage";
+
 function App() {
   const [wishList, setWishList] = useState([]);
   console.log(wishList, "wishList");
@@ -34,12 +33,6 @@ function App() {
     totalCount: 0,
   });
 
-  const [loadingGemstone, setLoadingGemstone] = useState(true);
-  const [gemstoneError, setGemstoneError] = useState(null);
-  const [gemstoneResponse, setGemstoneResponse] = useState({
-    gemstones: [],
-    totalCount: 0,
-  });
 
   const handleChange = (event, value) => {
     setPage(value);
@@ -71,39 +64,13 @@ function App() {
     }
   };
 
-  // Fetch Gemstone Data
-  const getGemstoneUrl = () => {
-    let Gemstoneurl = `http://localhost:5125/api/v1/Gemstone?Limit=${limit}&Offset=${offset}`;
-    if (userInput) Gemstoneurl += `&Search=${userInput}`;
-    if (minPrice) Gemstoneurl += `&MinPrice=${minPrice}`;
-    if (maxPrice) Gemstoneurl += `&MaxPrice=${maxPrice}`;
-    console.log(Gemstoneurl, "Gemstone url");
-    return Gemstoneurl;
-  };
-
-  const getGemstoneData = async () => {
-    try {
-      const responseg = await axios.get(getGemstoneUrl());
-      setGemstoneResponse(responseg.data);
-      console.log("API Gemstone Response:", responseg.data);
-      setLoadingGemstone(false);
-    } catch (error) {
-      console.error("Error fetching gemstone products: ", error);
-      setGemstoneError("Failed to fetch the gemstone product");
-      setLoadingGemstone(false);
-    }
-  };
-
   // Effect for Jewelry Data
   useEffect(() => {
     getJewelryData();
   }, [offset, userInput, minPrice, maxPrice]);
+  console.log("jewelry list from app:", jewelryResponse);
 
-  // Effect for Gemstone Data
-  useEffect(() => {
-    getGemstoneData();
-  }, [offset, userInput, minPrice, maxPrice]);
-  console.log("Gemstone Response:", gemstoneResponse);
+
 
   //profile
   const [loadingUserData, setLoadingUserData] = useState(true);
@@ -136,14 +103,14 @@ function App() {
 
   let isAuthenticated = userData ? true : false;
 
-  if (loadingJewelry || loadingGemstone) {
+  if (loadingJewelry) {
     return <Loading />;
   }
 
-  if (jewelryError || gemstoneError) {
+  if (jewelryError) {
     return (
       <div>
-        {jewelryError || gemstoneError}
+        {jewelryError }
         <NotFounPage />
       </div>
     );
@@ -167,27 +134,6 @@ function App() {
         {
           path: "/contactUs",
           element: <ContactUs />,
-        },
-        {
-          path: "/gemstone",
-          element: (
-            <GemstonePage
-              gemstoneList={gemstoneResponse.gemstones}
-              setUserInput={setUserInput}
-              wishList={wishList}
-              setWishList={setWishList}
-              totalCount={gemstoneResponse.totalCount}
-              page={page}
-              handleChange={handleChange}
-              setMinPrice={setMinPrice}
-              setMaxPrice={setMaxPrice}
-              limit={limit}
-            />
-          ),
-        },
-        {
-          path: "/gemstone/:gemstoneId",
-          element: <GemstoneDetailsPage />,
         },
         {
           path: "/jewelry",

@@ -67,7 +67,7 @@ export default function UserLogIn(prop) {
     event.preventDefault();
   };
 
-  //NoraUser@gmail.com ->Norh1234567890n
+  //NoraUser@User.com ->Norh1234567890
   return (
     <div className="login">
       <Box

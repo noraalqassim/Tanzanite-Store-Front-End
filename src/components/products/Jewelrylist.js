@@ -1,27 +1,26 @@
-import React from "react";
-import Gemstone from "./Gemstone";
-import ProductPagination from "../../pagination/ProductPagination";
 
-export default function GemstoneList(prop) {
+import Jewelry from "./Jewelry";
+import "./Jewelrylist.css";
+import ProductPagination from "../pagination/ProductPagination";
+export default function Jewelrylist(prop) {
   const {
-    gemstoneList,
+    jewelryList,
     wishList,
     setWishList,
     totalCount,
     page,
     handleChange,
-    limit,
+    limit
   } = prop;
-
-  console.log("GemstoneList props:", gemstoneList);
+  console.log("jewelryList props:", jewelryList);
   return (
     <div>
       <div className="productList">
-        {gemstoneList.map((gemstoneItem) => {
+        {jewelryList.map((jewelryItem) => {
           return (
-            <Gemstone
-              key={gemstoneItem.gemstoneId}
-              gemstoneItem={gemstoneItem}
+            <Jewelry
+              key={jewelryItem.jewelryId}
+              jewelryItem={jewelryItem}
               wishList={wishList}
               setWishList={setWishList}
             />
@@ -34,6 +33,6 @@ export default function GemstoneList(prop) {
         handleChange={handleChange}
         limit={limit}
       />
-</div>
+    </div>
   );
 }
