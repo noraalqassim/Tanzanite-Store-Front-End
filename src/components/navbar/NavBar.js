@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import "./NavBar.css";
 import { Link } from "react-router-dom";
 import { IoMenu } from "react-icons/io5";
-import { FaUserAltSlash } from "react-icons/fa";
+import { FaUserAltSlash, FaTools } from "react-icons/fa";
 import { FaRegUser, FaHeart, FaShoppingBasket } from "react-icons/fa";
 import Badge from "@mui/material/Badge";
 export default function NavBar(prop) {
@@ -20,6 +20,20 @@ export default function NavBar(prop) {
     <div className="sticky-top">
       <div className="navbar-top">
         <div className="contact">
+          {isAuthenticated && userData.role === "Admin" ? (
+            <Link
+              to="/dashboard"
+              style={{
+                textDecoration: "none",
+                marginRight: "20px",
+                fontSize: "25px",
+              }}
+            >
+              <FaTools />
+            </Link>
+          ) : (
+            <p style={{ display: "none" }}> <FaTools /></p>
+          )}
           <Link to="/contactUs" style={{ textDecoration: "none" }}>
             Contact Us
           </Link>

@@ -1,0 +1,21 @@
+.todolist {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .add-button {
+    margin-top: 10px;
+  }
+  
+  .task-list {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .task-list li {
+    margin-top: 10px;
+  }
+  
+  .remove-button {
+    margin-left: 10px;
+  }

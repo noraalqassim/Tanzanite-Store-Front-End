@@ -15,7 +15,8 @@ import WishListPage from "./pages/WishListPage";
 import UserProfile from "./components/user/UserProfile";
 import ProtectedRoute from "./components/user/ProtectedRoute";
 import JewelryDetialsPage from "./pages/JewelryDetialsPage";
-
+import DashboardPage from "./pages/DashboardPage";
+import JewelrtDashBoard from "./components/dashboard/jewelry/JewelrtDashBoard";;
 function App() {
   const [wishList, setWishList] = useState([]);
   console.log(wishList, "wishList");
@@ -23,7 +24,7 @@ function App() {
   const [userInput, setUserInput] = useState("");
   const [page, setPage] = useState(1);
   const [minPrice, setMinPrice] = useState(0);
-  const [maxPrice, setMaxPrice] = useState(1000);
+  const [maxPrice, setMaxPrice] = useState(1000000);
 
   // Jewelry and Gemstone product states
   const [loadingJewelry, setLoadingJewelry] = useState(true);
@@ -32,7 +33,6 @@ function App() {
     jewelry: [],
     totalCount: 0,
   });
-
 
   const handleChange = (event, value) => {
     setPage(value);
@@ -69,8 +69,6 @@ function App() {
     getJewelryData();
   }, [offset, userInput, minPrice, maxPrice]);
   console.log("jewelry list from app:", jewelryResponse);
-
-
 
   //profile
   const [loadingUserData, setLoadingUserData] = useState(true);
@@ -110,7 +108,7 @@ function App() {
   if (jewelryError) {
     return (
       <div>
-        {jewelryError }
+        {jewelryError}
         <NotFounPage />
       </div>
     );
@@ -177,8 +175,36 @@ function App() {
             />
           ),
         },
-
-        { path: "/wishList", element: <WishListPage wishList={wishList} setWishList={setWishList}/> },
+        {
+          path: "/dashboard",
+          element: (
+            <ProtectedRoute
+              loadingUserData={loadingUserData}
+              isAuthenticated={isAuthenticated}
+              shouldCheckAdmin={true}
+              userData={userData}
+              element={<DashboardPage userData={userData} />}
+            />
+          ),
+        },
+        {
+          path: "/jewelry-dashboard",
+          element: (
+            <ProtectedRoute
+              loadingUserData={loadingUserData}
+              isAuthenticated={isAuthenticated}
+              shouldCheckAdmin={true}
+              userData={userData}
+              element={<JewelrtDashBoard />}
+            />
+          ),
+        },
+        {
+          path: "/wishList",
+          element: (
+            <WishListPage wishList={wishList} setWishList={setWishList} />
+          ),
+        },
 
         // { path: "/cart", element: <CartPage /> },
       ],
