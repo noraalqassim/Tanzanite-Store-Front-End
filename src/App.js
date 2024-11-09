@@ -16,7 +16,8 @@ import UserProfile from "./components/user/UserProfile";
 import ProtectedRoute from "./components/user/ProtectedRoute";
 import JewelryDetialsPage from "./pages/JewelryDetialsPage";
 import DashboardPage from "./pages/DashboardPage";
-import JewelrtDashBoard from "./components/dashboard/jewelry/JewelrtDashBoard";;
+import JewelrtDashBoard from "./components/dashboard/jewelry/JewelrtDashBoard";import CreateNewJewelry from "./components/dashboard/jewelry/CreateNewJewelry";
+;
 function App() {
   const [wishList, setWishList] = useState([]);
   console.log(wishList, "wishList");
@@ -24,9 +25,9 @@ function App() {
   const [userInput, setUserInput] = useState("");
   const [page, setPage] = useState(1);
   const [minPrice, setMinPrice] = useState(0);
-  const [maxPrice, setMaxPrice] = useState(1000000);
+  const [maxPrice, setMaxPrice] = useState(null);
 
-  // Jewelry and Gemstone product states
+  // Jewelry product states
   const [loadingJewelry, setLoadingJewelry] = useState(true);
   const [jewelryError, setJewelryError] = useState(null);
   const [jewelryResponse, setJewelryResponse] = useState({
@@ -197,7 +198,7 @@ function App() {
               userData={userData}
               element={<JewelrtDashBoard />}
             />
-          ),
+          ), children:[{path: "create-new-Jewelry",element: <CreateNewJewelry/>}]
         },
         {
           path: "/wishList",

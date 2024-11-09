@@ -1,7 +1,11 @@
-import React from 'react'
+import React from "react";
 
 export default function CreateNewJewelry() {
+
+  
   return (
-    <div>CreateNewJewelry</div>
-  )
+    <div>
+      <h1>this is CreateNewJewelry</h1>
+    </div>
+  );
 }

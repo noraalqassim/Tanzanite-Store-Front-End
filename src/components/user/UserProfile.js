@@ -163,7 +163,8 @@ export default function UserProfile(prop) {
             Save
           </Button>
         </Popover>
-
+      {/* <Link to="create-new-Jewelry">Create new Jewelry</Link>
+      <Outlet/> */}
         <Button
           variant="contained"
           className="user-profile-button"
