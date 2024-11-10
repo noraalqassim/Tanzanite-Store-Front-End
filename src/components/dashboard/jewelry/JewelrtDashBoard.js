@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import JewelryItmeDashBoard from "./JewelryItmeDashBoard";
-import { Link, Outlet } from "react-router-dom";
 import {
   Box,
   Button,

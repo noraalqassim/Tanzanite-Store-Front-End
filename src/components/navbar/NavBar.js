@@ -94,23 +94,18 @@ export default function NavBar(prop) {
                   </Link>
                 </li>
                 <li className="nav-item">
-                  <Link to="/gemstone" className="nav-link">
-                    Gemstone
-                  </Link>
-                </li>
-                <li className="nav-item">
                   <Link to="/jewelry" className="nav-link">
                     Jewelry
                   </Link>
                 </li>
                 <li className="nav-item">
                   <a className="nav-link" href="#">
-                    How to Customize Your Piece
+                  About Us
                   </a>
                 </li>
                 <li className="nav-item">
                   <a className="nav-link" href="#">
-                    About Us
+                    Newsletter
                   </a>
                 </li>
               </ul>

@@ -16,7 +16,8 @@ import UserProfile from "./components/user/UserProfile";
 import ProtectedRoute from "./components/user/ProtectedRoute";
 import JewelryDetialsPage from "./pages/JewelryDetialsPage";
 import DashboardPage from "./pages/DashboardPage";
-import JewelrtDashBoard from "./components/dashboard/jewelry/JewelrtDashBoard";import CreateNewJewelry from "./components/dashboard/jewelry/CreateNewJewelry";
+import JewelrtDashBoard from "./components/dashboard/jewelry/JewelrtDashBoard";
+import UsersDashBoard from "./components/dashboard/users/UsersDashBoard";
 ;
 function App() {
   const [wishList, setWishList] = useState([]);
@@ -198,7 +199,19 @@ function App() {
               userData={userData}
               element={<JewelrtDashBoard />}
             />
-          ), children:[{path: "create-new-Jewelry",element: <CreateNewJewelry/>}]
+          )
+        },
+        {
+          path: "/users-dashboard",
+          element: (
+            <ProtectedRoute
+              loadingUserData={loadingUserData}
+              isAuthenticated={isAuthenticated}
+              shouldCheckAdmin={true}
+              userData={userData}
+              element={<UsersDashBoard />}
+            />
+          )
         },
         {
           path: "/wishList",

@@ -7,12 +7,12 @@ export default function Dashboard(prop) {
   return (
     <div>
       <Link to="/jewelry-dashboard">Jewelry Priduct</Link>
-      <br/>
+      {/* <br/>
       <Link>Gemstone </Link>
       <br/>
-      <Link>Category</Link>
+      <Link>Category</Link> */}
       <br/>
-      <Link>Users</Link>
+      <Link to="/users-dashboard">Users</Link>
       <br/>
       <Link>Orders</Link>
       <TodoList userData = {userData}/>
