@@ -1,23 +1,72 @@
 .user-profile-container {
-    max-width: 400px;
-    margin: auto;
-  }
-  
-  .user-profile-form {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-  }
-  
-  .user-profile-field {
-    display: flex;
-    align-items: center;
-  }
-  
-  .user-profile-field button {
-    margin-left: 10px;
-  }
-  
-  .user-profile-button {
-    margin-top: 20px;
-  }
+  max-width: 700px;
+  margin: auto;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.center-content {
+  display: flex;
+  justify-content: center;
+  margin: auto;
+}
+
+.col-md-8 {
+  max-width: 100%;
+}
+.addres-table {
+  width: 250px;
+}
+.bkg-photo {
+  position: relative;
+  height: 150px;
+  width: auto;
+  background: url("../../images/profileHeder.jpg") no-repeat;
+  background-size: cover;
+  backface-visibility: hidden;
+  overflow: hidden;
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
+}
+
+.face-photo {
+  position: relative;
+  top: -60px;
+  height: 120px;
+  width: 120px;
+  margin: 0 auto;
+  border-radius: 50%;
+  border: 5px solid white;
+  background: url("../../images/userImage.jpeg") no-repeat;
+  background-size: contain;
+  overflow: hidden;
+}
+.welcom {
+  margin-top: -40px;
+}
+
+
+.user-profile-button {
+  background-image: url("../../images/logOutBtn.png"); 
+  background-size: cover;
+  background-position: center;
+  color: rgb(255, 255, 255) !important; 
+  border: none; 
+  border-radius: 5px; 
+  padding: 15px 250px !important; 
+  font-size: 18px !important; 
+  font-weight: 500;
+  cursor: pointer; 
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); 
+  transition: transform 0.2s, box-shadow 0.2s, filter 0.3s; 
+  position: relative; 
+  overflow: hidden; 
+}
+.user-profile-button:hover{
+  transform: translateY(-4px); 
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5); 
+  filter: brightness(1.1); 
+}
+.user-profile-button:active{
+      transform: translateY(2px); 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); 
+}

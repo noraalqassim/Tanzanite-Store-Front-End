@@ -18,6 +18,7 @@ import JewelryDetialsPage from "./pages/JewelryDetialsPage";
 import DashboardPage from "./pages/DashboardPage";
 import JewelrtDashBoard from "./components/dashboard/jewelry/JewelrtDashBoard";
 import UsersDashBoard from "./components/dashboard/users/UsersDashBoard";
+import UserAddres from "./components/user/UserAddres";
 ;
 function App() {
   const [wishList, setWishList] = useState([]);
@@ -101,6 +102,37 @@ function App() {
   }, []);
   console.log("user data from app:", userData);
 
+  //addres 
+  const [loadingUserAddres, setLoadingUserAddres] = useState(true);
+  const [userAddresError, setUserAddresError] = useState(null);
+  const [userAddres, setUserAddres] = useState([]);
+
+  const getUserAddresList = async () => {
+    const token = localStorage.getItem("token");
+    const url = "http://localhost:5125/api/v1/Address";
+
+    try {
+      const response = await axios.get(url, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
+      setUserAddres(response.data);
+      setLoadingUserAddres(false);
+      console.log("API User Addres Response:", response.data);
+    } catch (error) {
+      console.error("Error fetching User Addres List from profile: ", error);
+      setUserAddresError("Failed to fetch the User Addres from profile");
+      setLoadingUserAddres(false);
+    }
+  };
+
+  // Effect for User List
+  useEffect(() => {
+    getUserAddresList();
+  }, []);
+  console.log(userAddres, "userAddres");
+
   let isAuthenticated = userData ? true : false;
 
   if (loadingJewelry) {
@@ -172,10 +204,10 @@ function App() {
               loadingUserData={loadingUserData}
               isAuthenticated={isAuthenticated}
               element={
-                <UserProfile userData={userData} setUserData={setUserData} />
+                <UserProfile userData={userData} setUserData={setUserData} userAddres={userAddres} setUserAddres={setUserAddres} /> 
               }
             />
-          ),
+          ),children: [{ path: "Addres", element: <UserAddres userData={userData} /> }],
         },
         {
           path: "/dashboard",
