@@ -7,10 +7,11 @@ import { FaUserAltSlash, FaTools } from "react-icons/fa";
 import { FaRegUser, FaHeart, FaShoppingBasket } from "react-icons/fa";
 import Badge from "@mui/material/Badge";
 export default function NavBar(prop) {
-  const { wishList, isAuthenticated, userData } = prop;
+  const { wishList, isAuthenticated, userData, cartList } = prop;
   const [isCollapsed, setIsCollapsed] = useState(true);
 
   const arrayLength = wishList.length;
+  const arrayCartLength = cartList.length;
 
   const toggleNavbar = () => {
     setIsCollapsed(!isCollapsed);
@@ -32,7 +33,10 @@ export default function NavBar(prop) {
               <FaTools />
             </Link>
           ) : (
-            <p style={{ display: "none" }}> <FaTools /></p>
+            <p style={{ display: "none" }}>
+              {" "}
+              <FaTools />
+            </p>
           )}
           <Link to="/contactUs" style={{ textDecoration: "none" }}>
             Contact Us
@@ -43,18 +47,19 @@ export default function NavBar(prop) {
         </div>
         <div className="icons">
           <i>
-            <Badge badgeContent={arrayLength} color="primary">
-              <Link to="/wishList">
-                <FaHeart />
-              </Link>
-            </Badge>
-          </i>
-          <i>
-            <Link to="/">
-              <FaShoppingBasket />
+            <Link to="/wishList">
+              <Badge badgeContent={arrayLength} color="primary">
+                <FaHeart style={{color: "#373737"}}/>
+              </Badge>
             </Link>
           </i>
-
+          <i>
+              <Link to="/cart">
+              <Badge badgeContent={arrayCartLength} color="primary">
+                <FaShoppingBasket  style={{color: "#373737"}}/>
+                </Badge>
+              </Link>
+          </i>
           <i>
             {isAuthenticated ? (
               <Link to="/profile">
@@ -100,7 +105,7 @@ export default function NavBar(prop) {
                 </li>
                 <li className="nav-item">
                   <a className="nav-link" href="#">
-                  About Us
+                    About Us
                   </a>
                 </li>
                 <li className="nav-item">

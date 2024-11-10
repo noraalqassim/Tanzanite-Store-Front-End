@@ -301,13 +301,19 @@ export default function UserProfile(prop) {
         </div>
       </div>
 
-
       {/* Addres */}
       <Link to="Addres"> Add your addres</Link>
       <Outlet />
       <br />
       <br />
-
+      <Link to="/orders">
+        <Button variant="contained" className="custom-button">
+          Order History
+        </Button>
+      </Link>
+      <br />
+      <br />
+      <br />
       {/* Log out */}
       <Button
         variant="contained"
@@ -320,7 +326,7 @@ export default function UserProfile(prop) {
       <br />
       <br />
       <br />
-            <br />
-      </div>
+      <br />
+    </div>
   );
 }

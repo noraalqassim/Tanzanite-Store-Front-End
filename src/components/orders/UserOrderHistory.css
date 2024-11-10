@@ -1,0 +1,54 @@
+.orderTable {
+  padding-top: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 1000px;
+  margin: auto;
+}
+.custom-orders-button {
+  background-image: url("../../images/tanzaniteBtn2.png");
+  background-size: cover;
+  background-position: center;
+  color: rgb(255, 255, 255) !important;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px !important;
+  font-size: 10px !important;
+  font-weight: 500;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  transition: transform 0.2s, box-shadow 0.2s, filter 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+.custom-orders-button2 {
+  background-image: url("../../images/tanzaniteBtn.png");
+  background-size: cover;
+  background-position: center;
+  color: rgb(255, 255, 255)!important;
+  border: none;
+  border-radius: 5px;
+  padding: 15px !important;
+  font-size: 14px !important;
+  font-weight: 300 !important;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  transition: transform 0.2s, box-shadow 0.2s, filter 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+
+.custom-orders-button:hover,
+.custom-orders-button2:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+  filter: brightness(1.1);
+}
+
+.custom-orders-button:active,
+.custom-orders-button2:active {
+  transform: translateY(2px);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+

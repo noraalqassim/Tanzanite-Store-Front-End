@@ -59,9 +59,9 @@ export default function UserAddres(prop) {
         }
       })
       .catch((error) => {
-        console.log(error.response.data);
-        if (error.response.data.errors.zipCode) {
-          alert(error.response.data.errors.zipCode);
+        console.log(error);
+        if (error.response.status == 400){
+          alert("Invalid ZipCode format. Please enter a valid ZipCode. Five digits only, like 12345");
         }
       });
   }

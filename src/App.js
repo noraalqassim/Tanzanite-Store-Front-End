@@ -19,10 +19,14 @@ import DashboardPage from "./pages/DashboardPage";
 import JewelrtDashBoard from "./components/dashboard/jewelry/JewelrtDashBoard";
 import UsersDashBoard from "./components/dashboard/users/UsersDashBoard";
 import UserAddres from "./components/user/UserAddres";
+import CartPage from "./pages/CartPage";
+import UserOrderHistory from "./components/orders/UserOrderHistory";
 ;
 function App() {
   const [wishList, setWishList] = useState([]);
+  const [cartList, setCartList] = useState([]);
   console.log(wishList, "wishList");
+  console.log(cartList, "cartList");
 
   const [userInput, setUserInput] = useState("");
   const [page, setPage] = useState(1);
@@ -109,7 +113,7 @@ function App() {
 
   const getUserAddresList = async () => {
     const token = localStorage.getItem("token");
-    const url = "http://localhost:5125/api/v1/Address";
+    const url = "http://localhost:5125/api/v1/Address/UserAddress";
 
     try {
       const response = await axios.get(url, {
@@ -154,6 +158,7 @@ function App() {
       element: (
         <LayOut
           wishList={wishList}
+          cartList={cartList}
           isAuthenticated={isAuthenticated}
           userData={userData}
         />
@@ -187,7 +192,7 @@ function App() {
         },
         {
           path: "/jewelry/:jewelryId",
-          element: <JewelryDetialsPage />,
+          element: <JewelryDetialsPage cartList={cartList} setCartList={setCartList}/>,
         },
         {
           path: "/register",
@@ -208,6 +213,10 @@ function App() {
               }
             />
           ),children: [{ path: "Addres", element: <UserAddres userData={userData} /> }],
+        },
+        {
+          path: "/orders",
+          element: <UserOrderHistory userData={userData}/>,
         },
         {
           path: "/dashboard",
@@ -251,8 +260,7 @@ function App() {
             <WishListPage wishList={wishList} setWishList={setWishList} />
           ),
         },
-
-        // { path: "/cart", element: <CartPage /> },
+        { path: "/cart", element: <CartPage cartList={cartList} setCartList={setCartList} userData={userData}/> },
       ],
     },
     { path: "*", element: <NotFounPage /> },
