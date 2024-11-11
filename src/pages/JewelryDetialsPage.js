@@ -5,7 +5,6 @@ export default function JewelryDetialsPage(prop) {
   const{cartList, setCartList}=prop;
   return (
     <div>
-      <h2>JewelryDetialsPage</h2>
       <JewelryDetails cartList={cartList} setCartList={setCartList}/>
     </div>
   );

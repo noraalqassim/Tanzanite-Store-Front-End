@@ -3,7 +3,7 @@
 }
 
 .carousel-indicators li::before {
-    content: "" !important; /* Remove the default content */
+    content: "" !important; 
 }
 
 .w-100{
@@ -17,7 +17,6 @@
 .carousel-caption{
     right: 55% !important;
     bottom: 5rem;
-    color: rgb(255, 255, 255);
     font-weight: 600;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
 

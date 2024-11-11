@@ -45,7 +45,7 @@ function App() {
     setPage(value);
   };
 
-  const limit = 3;
+  const limit = 4;
   const offset = (page - 1) * limit;
 
   // Fetch Jewelry Data

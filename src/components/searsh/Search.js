@@ -11,17 +11,28 @@ export default function Search(prop) {
     event.preventDefault();
     setUserInput(searchValue);
   };
-  
 
   return (
-      <div className="search-box">
-        <form className="container-4" onSubmit={handleSearch}>
-          <input className="input-search" type="search" id="search"  value={searchValue}
-          onChange={(event) => setSearchValue(event.target.value)} placeholder="Search..." />
-          <button className="icon btn-searsh" type="submit">
-            <i><IoSearch /></i>
-          </button>
-        </form>
+      <div class="bbbootstrap">
+        <div class="container">
+          <div className="search-box">
+            <form className="container-4" onSubmit={handleSearch}>
+              <input
+                className="input-search"
+                type="search"
+                id="search"
+                value={searchValue}
+                onChange={(event) => setSearchValue(event.target.value)}
+                placeholder="Search..."
+              />
+              <button className="icon btn-searsh" type="submit">
+                <i>
+                  <IoSearch />
+                </i>
+              </button>
+            </form>
+          </div>
+        </div>
       </div>
   );
 }

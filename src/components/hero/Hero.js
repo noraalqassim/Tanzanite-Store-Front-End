@@ -10,7 +10,7 @@ export default function Hero() {
     <div
             id="carouselExampleIndicators"
             className="carousel slide hero"
-            data-bs-ride="carousel" // Use data-bs-ride for Bootstrap 5
+            data-bs-ride="carousel" 
         >
             <ol className="carousel-indicators">
                 <li
@@ -38,7 +38,7 @@ export default function Hero() {
                 className="carousel-control-prev"
                 href="#carouselExampleIndicators"
                 role="button"
-                data-bs-slide="prev" // Use data-bs-slide for Bootstrap 5
+                data-bs-slide="prev"
             >
                 <span className="carousel-control-prev-icon" aria-hidden="true"></span>
                 <span className="visually-hidden">Previous</span>
@@ -47,7 +47,7 @@ export default function Hero() {
                 className="carousel-control-next"
                 href="#carouselExampleIndicators"
                 role="button"
-                data-bs-slide="next" // Use data-bs-slide for Bootstrap 5
+                data-bs-slide="next" 
             >
                 <span className="carousel-control-next-icon" aria-hidden="true"></span>
                 <span className="visually-hidden">Next</span>

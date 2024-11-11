@@ -1,8 +1,6 @@
 import React from "react";
 import Jewelrylist from "../components/products/Jewelrylist";
 import Search from "../components/searsh/Search";
-import JewelryPriceRangeForm from "../components/products/JewelryPriceRangeForm";
-
 export default function JewelryPage(prop) {
   const {
     jewelryList,
@@ -21,12 +19,7 @@ export default function JewelryPage(prop) {
   console.log("jewelry List in Page:", jewelryList);
   return (
     <div>
-      <p>JewelryPage </p>
       <Search setUserInput={setUserInput} />
-      <JewelryPriceRangeForm
-        setMinPrice={setMinPrice}
-        setMaxPrice={setMaxPrice}
-      />
       <Jewelrylist
         jewelryList={jewelryList}
         wishList={wishList}
@@ -35,6 +28,8 @@ export default function JewelryPage(prop) {
         page={page}
         handleChange={handleChange}
         limit={limit}
+        setMinPrice={setMinPrice}
+        setMaxPrice={setMaxPrice}
       />
     </div>
   );
