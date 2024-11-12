@@ -165,6 +165,7 @@ function App() {
           userData={userData}
         />
       ),
+      // eslint-disable-next-line no-sparse-arrays
       children: [
         {
           path: "/",
@@ -223,11 +224,9 @@ function App() {
                 />
               }
             />
-          ),
-          children: [
-            { path: "Addres", element: <UserAddres userData={userData} /> },
-          ],
+          )
         },
+        { path: "/Addres", element: <UserAddres userData={userData} /> },
         {
           path: "/orders",
           element: <UserOrderHistory userData={userData} />,

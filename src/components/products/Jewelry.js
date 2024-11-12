@@ -37,14 +37,15 @@ export default function Jewelry(prop) {
   }
 
   return (
-    <Link to={`${jewelryItem.jewelryId}`} style={{ textDecoration: "none" }}>
       <div className="jewelry-card-item">
+        <Link to={`${jewelryItem.jewelryId}`} style={{ textDecoration: "none" }}>
         <div className="tumb">
           <img
             src={jewelryItem.jewelryImage[0]}
             alt={jewelryItem.jewelryName}
           />
         </div>
+        </Link>
         <div className="details">
           <h4>{jewelryItem.jewelryName}</h4>
           <p>{jewelryItem.jewelryType}</p>
@@ -53,7 +54,7 @@ export default function Jewelry(prop) {
             <div className="wishList">
               <a
                 onClick={() => addToFav(jewelryItem)}
-                style={{ color: isFavorited ? "#38497a" : "#BF9270" }}
+                style={{ color: isFavorited ? "#AF1740" : "#bfa670" }}
               >
                 <FaHeart />
               </a>
@@ -61,6 +62,5 @@ export default function Jewelry(prop) {
           </div>
         </div>
       </div>
-    </Link>
   );
 }

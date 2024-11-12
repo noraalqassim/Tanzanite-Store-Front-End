@@ -71,6 +71,10 @@
     margin-left: auto;
     font-size:1.5rem;
 }
+.close:hover{
+color:#bfa670 ;
+}
+
 .img-fluid{
     width: 5.5rem;
 }

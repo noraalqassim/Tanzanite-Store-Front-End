@@ -77,39 +77,6 @@ export default function UserProfile(prop) {
     setOpenPhoneDialog(false);
   };
 
-  //Address
-  //http://localhost:5125/api/v1/Address --> create new Address
-
-  // const [loadingUserAddres, setLoadingUserAddres] = useState(true);
-  // const [userAddresError, setUserAddresError] = useState(null);
-  // const [userAddres, setUserAddres] = useState([]);
-
-  // const getUserAddresList = async () => {
-  //   const token = localStorage.getItem("token");
-  //   const url = "http://localhost:5125/api/v1/Address";
-
-  //   try {
-  //     const response = await axios.get(url, {
-  //       headers: {
-  //         Authorization: `Bearer ${token}`,
-  //       },
-  //     });
-  //     setUserAddres(response.data);
-  //     setLoadingUserAddres(false);
-  //     console.log("API User Addres Response:", response.data);
-  //   } catch (error) {
-  //     console.error("Error fetching User Addres List from profile: ", error);
-  //     setUserAddresError("Failed to fetch the User Addres from profile");
-  //     setLoadingUserAddres(false);
-  //   }
-  // };
-
-  // // Effect for User List
-  // useEffect(() => {
-  //   getUserAddresList();
-  // }, []);
-  // console.log(userAddres, "userAddres");
-
   return (
     <div className="user-profile-container">
       <div className="bkg-photo"></div>
@@ -301,16 +268,21 @@ export default function UserProfile(prop) {
         </div>
       </div>
 
-      {/* Addres */}
-      <Link to="Addres"> Add your addres</Link>
-      <Outlet />
-      <br />
-      <br />
-      <Link to="/orders">
-        <Button variant="contained" className="custom-button">
-          Order History
-        </Button>
-      </Link>
+      <div style={{ display: "flex", justifyContent: "center",marginTop: "50px" }}>
+        {/* Addres */}
+        <Link to="/Addres">
+          <Button variant="contained" className="custom-button" style={{ marginRight: "50px" }}>
+            Add your addres
+          </Button>
+        </Link>
+        <br />
+        <br />
+        <Link to="/orders">
+          <Button variant="contained" className="custom-button">
+            Order History
+          </Button>
+        </Link>
+      </div>
       <br />
       <br />
       <br />

@@ -12,6 +12,7 @@
 }
 
 .delet-wishlist-button {
+  margin-left: 50px;
   position: relative;
   padding-top: 30px;
   margin-right: 60px;
@@ -19,13 +20,18 @@
   height: 20px;
   font-size: 30px;
 }
+.delet-wishlist-button:hover{
+  color: #bfa670;
+}
 
 .wishlist-image {
   margin-right: 50px;
   padding-left: 20px;
+  width: 120px;
 }
 
 .wishlist-description {
+  margin-left:40px;
   text-align: center;
   padding-top: 10px;
   width: 110px;
@@ -34,6 +40,7 @@
 }
 
 .wishlist-price {
+  margin-left:100px;
   text-align: right;
   padding-top: 27px;
   font-size: 18px;
