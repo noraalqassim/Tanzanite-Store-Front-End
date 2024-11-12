@@ -1,21 +1,14 @@
 import React from "react";
 
-import { Link } from "react-router-dom";
 import TodoList from "./admidTodoList/TodoList";
+import DrawerListDashBoard from "./DrawerListDashBoard";
 export default function Dashboard(prop) {
-    const {userData}=prop;
+  const { userData } = prop;
+
   return (
     <div>
-      <Link to="/jewelry-dashboard">Jewelry Priduct</Link>
-      {/* <br/>
-      <Link>Gemstone </Link>
-      <br/>
-      <Link>Category</Link> */}
-      <br/>
-      <Link to="/users-dashboard">Users</Link>
-      <br/>
-      <Link to="/orders-dashboard">Orders</Link>
-      <TodoList userData = {userData}/>
+      <DrawerListDashBoard />
+      <TodoList userData={userData} />
     </div>
   );
 }

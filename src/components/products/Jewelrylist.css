@@ -27,6 +27,8 @@
   color: #bfa154;
 }
 .filters-borders {
+  margin-bottom: 30px;
+  margin-top: 30px;
   border-bottom: 1px solid #ccc;
 }
 

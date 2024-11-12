@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { BiBorderRadius } from "react-icons/bi";
 
 export default function JewelryTypeFilter({ setType }) {
   const [searchTypeValue, setSearchTypeValue] = useState("");
@@ -14,9 +13,10 @@ export default function JewelryTypeFilter({ setType }) {
   };
 
   return (
-    <form onSubmit={handleSearch} className="fiter-from" >
+    <form onSubmit={handleSearch}  >
+      <p style={{fontSize:"15px", color:"#4a4949"}}>'Necklace', 'Earrings', 'Bracelet', 'Ring'</p>
       <input
-      className="filter-input"
+      style={{borderRadius:"10px"}}
         type="text"
         placeholder="Search for Jewelry Type"
         value={searchTypeValue}

@@ -21,6 +21,8 @@ export default function Jewelrylist(prop) {
     setType,
   } = prop;
 
+  
+
   return (
     <div className="page-body">
       <div className="filters">

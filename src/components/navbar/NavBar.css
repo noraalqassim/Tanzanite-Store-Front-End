@@ -9,7 +9,7 @@
     background-color: #f8f9fa;
 }
 .contact {
-    font-weight: 500;
+    font-weight: 900;
     color:#373737;
     margin-left: 40px;
     transition: 0.3s ease;
@@ -43,7 +43,6 @@
 .icons i {
     color:#373737 !important;
     font-size: 20px;
-    /* margin-left: 10px; */
     transition: 0.3s ease;
     cursor: pointer;
 }
@@ -67,7 +66,7 @@
 }
 .nav-link{
     margin-left: 30px;
-    font-weight: 500;
+    font-weight: bold;
     transition: 0.3s ease;
     cursor: pointer;
 }

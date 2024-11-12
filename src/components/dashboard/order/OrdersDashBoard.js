@@ -13,6 +13,7 @@ import {
   Stack,
 } from "@mui/material";
 import OrderItemDashBoard from "./OrderItemDashBoard";
+import DrawerListDashBoard from "../DrawerListDashBoard";
 
 export default function OrdersDashBoard() {
   const [loadingOrders, setLoadingOrders] = useState(true);
@@ -48,6 +49,7 @@ export default function OrdersDashBoard() {
     <div
       style={{ display: "flex", justifyContent: "center", marginTop: "25px" }}
     >
+      <DrawerListDashBoard />
       <div style={{ width: "1100px" }}>
         <h2 style={{ textAlign: "center" }}>Orders List</h2>
         <Table size="small" style={{ border: "1px solid #ccc" }}>
@@ -65,7 +67,13 @@ export default function OrdersDashBoard() {
           </TableHead>
           <TableBody>
             {ordersList.map((order) => {
-              return <OrderItemDashBoard key={order.orderId} order={order} getOrdersList={getOrdersList} />;
+              return (
+                <OrderItemDashBoard
+                  key={order.orderId}
+                  order={order}
+                  getOrdersList={getOrdersList}
+                />
+              );
             })}
           </TableBody>
         </Table>

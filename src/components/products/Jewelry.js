@@ -48,9 +48,9 @@ export default function Jewelry(prop) {
         </Link>
         <div className="details">
           <h4>{jewelryItem.jewelryName}</h4>
-          <p>{jewelryItem.jewelryType}</p>
+          <p className="product-type">{jewelryItem.jewelryType}</p>
           <div className="botton-details">
-            <div className="price">${jewelryItem.jewelryPrice}</div>
+            <div className="price">${jewelryItem.finalProductPrice}</div>
             <div className="wishList">
               <a
                 onClick={() => addToFav(jewelryItem)}

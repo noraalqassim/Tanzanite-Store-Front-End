@@ -22,6 +22,8 @@ import UserAddres from "./components/user/UserAddres";
 import CartPage from "./pages/CartPage";
 import UserOrderHistory from "./components/orders/UserOrderHistory";
 import OrdersDashBoard from "./components/dashboard/order/OrdersDashBoard";
+import GemstoneDachBoard from "./components/dashboard/gemstone/GemstoneDachBoard";
+import CategoryDachBoard from "./components/dashboard/Category/CategoryDachBoard";
 function App() {
   const [wishList, setWishList] = useState([]);
   const [cartList, setCartList] = useState([]);
@@ -224,7 +226,7 @@ function App() {
                 />
               }
             />
-          )
+          ),
         },
         { path: "/Addres", element: <UserAddres userData={userData} /> },
         {
@@ -279,7 +281,30 @@ function App() {
             />
           ),
         },
-        ,
+        {
+          path: "/gemstone-dashboard",
+          element: (
+            <ProtectedRoute
+              loadingUserData={loadingUserData}
+              isAuthenticated={isAuthenticated}
+              shouldCheckAdmin={true}
+              userData={userData}
+              element={<GemstoneDachBoard />}
+            />
+          ),
+        },
+        {
+          path: "/catigory-dashboard",
+          element: (
+            <ProtectedRoute
+              loadingUserData={loadingUserData}
+              isAuthenticated={isAuthenticated}
+              shouldCheckAdmin={true}
+              userData={userData}
+              element={<CategoryDachBoard />}
+            />
+          ),
+        },
         {
           path: "/wishList",
           element: (

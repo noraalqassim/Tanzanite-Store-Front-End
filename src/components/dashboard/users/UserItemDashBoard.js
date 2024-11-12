@@ -21,7 +21,7 @@ export default function UserItemDashBoard(prop) {
 
   // Function to handle delete action
   const handleDeleteClick = () => {
-    setOpenConfirmDelete(true); // Open confirmation dialog
+    setOpenConfirmDelete(true); 
   };
 
   function deleteUser() {

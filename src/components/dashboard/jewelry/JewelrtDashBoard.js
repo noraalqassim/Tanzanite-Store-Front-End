@@ -24,6 +24,7 @@ import {
   TablePagination,
 } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
+import DrawerListDashBoard from "../DrawerListDashBoard";
 
 export default function JewelrtDashBoard() {
   const [loadingJewelry, setLoadingJewelry] = useState(true);
@@ -164,6 +165,7 @@ export default function JewelrtDashBoard() {
   return (
     <div>
       <h1>Jewelrt Product</h1>
+      <DrawerListDashBoard />
       {/* create new jewelry form  */}
       <div>
         <div

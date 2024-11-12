@@ -1,4 +1,5 @@
 main color -> #cab273
+-> #bfa670
 
 tanzanite color -> #38497a
 

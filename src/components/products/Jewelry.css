@@ -25,18 +25,19 @@
   .details{
     padding: 30px;
   }
-  
-  .category{
+
+  .product-type{
     display: block;
-    color: #ccc;
-    font-size: 12px;
+    color: #bfa670;
+    font-size: 15px;
     font-weight: 700;
     text-transform: uppercase;
     margin-bottom: 18px;
   }
   
-  h4 {
+  .details h4 {
     font-size: 18px;
+    font-weight: 600;
     color: #363636;
     display: block;
     margin-bottom: 18px;
