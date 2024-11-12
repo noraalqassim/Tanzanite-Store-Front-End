@@ -1,10 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
 
 import Jewelry from "./Jewelry";
 import "./Jewelrylist.css";
 import ProductPagination from "../pagination/ProductPagination";
 import JewelryPriceRangeForm from "./JewelryPriceRangeForm";
-import CatigoryFilters from "./filters/CatigoryFilters";
+import JewelryTypeFilter from "./filters/JewelryTypeFilter";
 
 export default function Jewelrylist(prop) {
   const {
@@ -17,28 +17,19 @@ export default function Jewelrylist(prop) {
     limit,
     setMinPrice,
     setMaxPrice,
+    type,
+    setType,
   } = prop;
-
-  const [selectedCategories, setSelectedCategories] = useState([]);
-
-  const filteredProducts = selectedCategories.length
-    ? jewelryList.filter((jewelryItem) =>
-        selectedCategories.includes(jewelryItem.gemstone.category.categoryName)
-      )
-    : jewelryList;
-    
-  const products = filteredProducts;
-  const categories = Array.from(
-    new Set(
-      jewelryList.map(
-        (jewelryItem) => jewelryItem.gemstone.category.categoryName
-      )
-    )
-  );
 
   return (
     <div className="page-body">
       <div className="filters">
+        <ProductPagination
+          totalCount={totalCount}
+          page={page}
+          handleChange={handleChange}
+          limit={limit}
+        />
         <div className="filters-borders">
           <p className="filter-p">Price Filters</p>
           <div className="price-filters">
@@ -48,19 +39,19 @@ export default function Jewelrylist(prop) {
               setMaxPrice={setMaxPrice}
             />
           </div>
-          <p className="filter-p">Catigory </p>
-          <div>
-            <CatigoryFilters
-              selectedCategories={selectedCategories}
-              setSelectedCategories={setSelectedCategories}
-              categories={categories}
-            />
+        </div>
+        <div className="filters-borders">
+          <p className="filter-p">Jewelry Type </p>
+          <div className="type-filters">
+            <JewelryTypeFilter 
+            style={{ marginBottom: "20px" ,marginTop: "10px" }}
+            setType={setType} />
           </div>
         </div>
       </div>
       <div className="products">
         <div className="productList">
-          {products.map((jewelryItem) => (
+          {jewelryList.map((jewelryItem) => (
             <Jewelry
               key={jewelryItem.jewelryId}
               jewelryItem={jewelryItem}

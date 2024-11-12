@@ -1,7 +1,5 @@
 import React, { useState } from "react";
 import "./Search.css";
-import styles from "./Search.css";
-import { IoSearchOutline } from "react-icons/io5";
 import { IoSearch } from "react-icons/io5";
 export default function Search(prop) {
   const { setUserInput } = prop;

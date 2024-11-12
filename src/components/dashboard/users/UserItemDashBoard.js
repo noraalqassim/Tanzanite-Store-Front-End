@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import axios from "axios";
 
 import {
@@ -7,9 +7,6 @@ import {
   DialogTitle,
   DialogContent,
   Stack,
-  Table,
-  TableHead,
-  TableBody,
   TableRow,
   TableCell,
 } from "@mui/material";
@@ -46,22 +43,17 @@ export default function UserItemDashBoard(prop) {
       .catch((error) => console.log(error));
   }
   return (
-    <div  style={{
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-      }} >
-      <TableRow>
-        <TableCell>{user.name}</TableCell>
-        <TableCell>{user.phoneNumber}</TableCell>
-        <TableCell>{user.email}</TableCell>
-        <TableCell>{user.role}</TableCell>
-        <TableCell>
-          <Button onClick={handleDeleteClick} color="error" variant="contained">
-            Delete
-          </Button>
-        </TableCell>
-      </TableRow>
+    <TableRow>
+      <TableCell>{user.name}</TableCell>
+      <TableCell>{user.phoneNumber}</TableCell>
+      <TableCell>{user.email}</TableCell>
+      <TableCell>{user.role}</TableCell>
+      <TableCell>
+        <Button onClick={handleDeleteClick} color="error" variant="contained">
+          Delete
+        </Button>
+      </TableCell>
+
       {/* Confirmation Delete Dialog */}
       <Dialog open={openConfirmDelete} onClose={closeConfirmDialog}>
         <DialogTitle>Confirm Deletion</DialogTitle>
@@ -85,6 +77,6 @@ export default function UserItemDashBoard(prop) {
           </Stack>
         </DialogContent>
       </Dialog>
-    </div>
+    </TableRow>
   );
 }

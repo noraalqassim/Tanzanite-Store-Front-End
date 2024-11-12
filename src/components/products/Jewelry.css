@@ -1,10 +1,16 @@
-.jewelry-card-item{
-    margin: 50px;
-    position: relative;
-    width: 280px;
-    box-shadow: 0 2px 7px #dfdfdf;
-  }
-  
+.jewelry-card-item {
+  margin: 50px;
+  border-radius: 20px;
+  position: relative;
+  width: 280px;
+  box-shadow: 0 2px 7px #dfdfdf;
+  transition: box-shadow 0.3s, transform 0.3s;
+}
+
+.jewelry-card-item:hover {
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  transform: translateY(-5px);
+}
   .tumb{
     height: 300px;
     padding: 20px;
@@ -29,7 +35,7 @@
     margin-bottom: 18px;
   }
   
-  h4 a{
+  h4 {
     font-size: 18px;
     color: #363636;
     display: block;
@@ -38,9 +44,6 @@
     transform: 0.3s;
   }
   
-  h4 a:hover{
-    color: #85654d;
-  }
   
   .botton-details{
   overflow: hidden;

@@ -1,23 +1,19 @@
-import React from "react";
+import React from 'react'
 import { Link } from "react-router-dom";
 
 import Lottie from "lottie-react";
-import emptyWishlistAnimation from "../../animation/emptyWishlist.json";
-export default function EmptyWIshlist() {
+import NoOrderAnimation from "../../animation/NoOrderAnimation.json";
+export default function NoOrder() {
   return (
     <div
       style={{ display: "flex", flexDirection: "column", alignItems: "center" }}
     >
       <div style={{ display: "flex", justifyContent: "center" }}>
-        <Lottie
-          animationData={emptyWishlistAnimation}
-          style={{ width: "300px" }}
-        />
+        <Lottie animationData={NoOrderAnimation} style={{ width: "300px" }} />
       </div>
-      <h1>Empty Wishlist</h1>
+      <h1>No Orders Found</h1>
       <h5>
-        Sparkle up your wishlist! Add dazzling jewelry pieces to your collection
-        today!!
+      Your Order History appears empty! Fill it with your previous purchases for a nostalgic shopping experience!
       </h5>
       <Link to="/jewelry">
         <button className="button" role="button">
@@ -25,5 +21,5 @@ export default function EmptyWIshlist() {
         </button>
       </Link>
     </div>
-  );
+  )
 }

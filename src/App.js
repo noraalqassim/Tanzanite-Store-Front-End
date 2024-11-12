@@ -21,7 +21,7 @@ import UsersDashBoard from "./components/dashboard/users/UsersDashBoard";
 import UserAddres from "./components/user/UserAddres";
 import CartPage from "./pages/CartPage";
 import UserOrderHistory from "./components/orders/UserOrderHistory";
-;
+import OrdersDashBoard from "./components/dashboard/order/OrdersDashBoard";
 function App() {
   const [wishList, setWishList] = useState([]);
   const [cartList, setCartList] = useState([]);
@@ -29,6 +29,7 @@ function App() {
   console.log(cartList, "cartList");
 
   const [userInput, setUserInput] = useState("");
+  const [type, setType] = useState("");
   const [page, setPage] = useState(1);
   const [minPrice, setMinPrice] = useState(0);
   const [maxPrice, setMaxPrice] = useState(null);
@@ -54,6 +55,7 @@ function App() {
     if (userInput) Jewelryurl += `&Search=${userInput}`;
     if (minPrice) Jewelryurl += `&MinPrice=${minPrice}`;
     if (maxPrice) Jewelryurl += `&MaxPrice=${maxPrice}`;
+    if (type) Jewelryurl += `&Type=${type}`;
     console.log(Jewelryurl, "Jewelry url");
     return Jewelryurl;
   };
@@ -74,7 +76,7 @@ function App() {
   // Effect for Jewelry Data
   useEffect(() => {
     getJewelryData();
-  }, [offset, userInput, minPrice, maxPrice]);
+  }, [offset, userInput, minPrice, maxPrice, type]);
   console.log("jewelry list from app:", jewelryResponse);
 
   //profile
@@ -106,7 +108,7 @@ function App() {
   }, []);
   console.log("user data from app:", userData);
 
-  //addres 
+  //addres
   const [loadingUserAddres, setLoadingUserAddres] = useState(true);
   const [userAddresError, setUserAddresError] = useState(null);
   const [userAddres, setUserAddres] = useState([]);
@@ -187,12 +189,16 @@ function App() {
               setMinPrice={setMinPrice}
               setMaxPrice={setMaxPrice}
               limit={limit}
+              type={type}
+              setType={setType}
             />
           ),
         },
         {
           path: "/jewelry/:jewelryId",
-          element: <JewelryDetialsPage cartList={cartList} setCartList={setCartList}/>,
+          element: (
+            <JewelryDetialsPage cartList={cartList} setCartList={setCartList} />
+          ),
         },
         {
           path: "/register",
@@ -209,14 +215,22 @@ function App() {
               loadingUserData={loadingUserData}
               isAuthenticated={isAuthenticated}
               element={
-                <UserProfile userData={userData} setUserData={setUserData} userAddres={userAddres} setUserAddres={setUserAddres} /> 
+                <UserProfile
+                  userData={userData}
+                  setUserData={setUserData}
+                  userAddres={userAddres}
+                  setUserAddres={setUserAddres}
+                />
               }
             />
-          ),children: [{ path: "Addres", element: <UserAddres userData={userData} /> }],
+          ),
+          children: [
+            { path: "Addres", element: <UserAddres userData={userData} /> },
+          ],
         },
         {
           path: "/orders",
-          element: <UserOrderHistory userData={userData}/>,
+          element: <UserOrderHistory userData={userData} />,
         },
         {
           path: "/dashboard",
@@ -240,7 +254,7 @@ function App() {
               userData={userData}
               element={<JewelrtDashBoard />}
             />
-          )
+          ),
         },
         {
           path: "/users-dashboard",
@@ -252,15 +266,37 @@ function App() {
               userData={userData}
               element={<UsersDashBoard />}
             />
-          )
+          ),
         },
+        {
+          path: "/orders-dashboard",
+          element: (
+            <ProtectedRoute
+              loadingUserData={loadingUserData}
+              isAuthenticated={isAuthenticated}
+              shouldCheckAdmin={true}
+              userData={userData}
+              element={<OrdersDashBoard />}
+            />
+          ),
+        },
+        ,
         {
           path: "/wishList",
           element: (
             <WishListPage wishList={wishList} setWishList={setWishList} />
           ),
         },
-        { path: "/cart", element: <CartPage cartList={cartList} setCartList={setCartList} userData={userData}/> },
+        {
+          path: "/cart",
+          element: (
+            <CartPage
+              cartList={cartList}
+              setCartList={setCartList}
+              userData={userData}
+            />
+          ),
+        },
       ],
     },
     { path: "*", element: <NotFounPage /> },

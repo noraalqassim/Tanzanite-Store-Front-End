@@ -12,10 +12,10 @@ export default function EmptyCart() {
         <Lottie animationData={emptyCartAnimation} style={{ width: "300px" }} />
       </div>
       <h1>Empty Cart!</h1>
-      <p>
+      <h5>
         Your cart is feeling lonely! Fill it up with your favorite items for a
         delightful shopping experience.
-      </p>
+      </h5>
       <Link to="/jewelry">
         <button className="button" role="button">
           Jewelry

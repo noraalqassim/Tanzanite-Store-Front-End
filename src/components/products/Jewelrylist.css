@@ -18,6 +18,7 @@
   padding: 20px;
   background-color: #fafafa;
   border-radius: 20px;
+  margin-bottom: 30px;
 }
 
 .filter-p{
@@ -27,4 +28,8 @@
 }
 .filters-borders {
   border-bottom: 1px solid #ccc;
+}
+
+.type-filters {
+  margin-top: 20px;
 }

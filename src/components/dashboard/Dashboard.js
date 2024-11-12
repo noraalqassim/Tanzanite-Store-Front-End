@@ -14,7 +14,7 @@ export default function Dashboard(prop) {
       <br/>
       <Link to="/users-dashboard">Users</Link>
       <br/>
-      <Link>Orders</Link>
+      <Link to="/orders-dashboard">Orders</Link>
       <TodoList userData = {userData}/>
     </div>
   );

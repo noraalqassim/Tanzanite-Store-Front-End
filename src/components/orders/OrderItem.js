@@ -22,12 +22,10 @@ export default function OrderItem(props) {
   return (
     <tr>
       <th scope="row">{order.orderId}</th>
-      <td>{order.addressId}</td>
       <td>{order.createdAt}</td>
       <td>$ {order.orderPrice}</td>
-      <td>state</td>
+      <td>{order.status}</td>
       <td>
-        {" "}
         <Button  className="custom-orders-button" onClick={handleOpen}>
           Show Details
         </Button>

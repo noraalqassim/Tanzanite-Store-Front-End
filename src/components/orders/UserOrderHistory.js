@@ -3,6 +3,7 @@ import axios from "axios";
 import OrderItem from "./OrderItem";
 
 import "./UserOrderHistory.css";
+import NoOrder from "../error/NoOrder";
 export default function UserOrderHistory(prop) {
   const { userData } = prop;
 
@@ -28,7 +29,7 @@ export default function UserOrderHistory(prop) {
   console.log(orderList, "orderList");
 
   if (orderList.length === 0) {
-    return <div> No order history </div>;
+    return <NoOrder/>;
   }
   return (
     <div>
@@ -38,9 +39,9 @@ export default function UserOrderHistory(prop) {
           <thead>
             <tr>
               <th scope="col">Order number:</th>
-              <th scope="col">Addres</th>
               <th scope="col">Created At:</th>
               <th scope="col">Order Price:</th>
+              <th scope="col">Order Status:</th>
               <th scope="col">Order Details:</th>
             </tr>
           </thead>

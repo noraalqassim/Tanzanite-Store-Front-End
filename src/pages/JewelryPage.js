@@ -13,7 +13,9 @@ export default function JewelryPage(prop) {
     handleChange,
     setMinPrice,
     setMaxPrice,
-    limit
+    limit,
+    type,
+    setType,
   } = prop;
 
   console.log("jewelry List in Page:", jewelryList);
@@ -30,6 +32,8 @@ export default function JewelryPage(prop) {
         limit={limit}
         setMinPrice={setMinPrice}
         setMaxPrice={setMaxPrice}
+        type={type}
+        setType={setType}
       />
     </div>
   );

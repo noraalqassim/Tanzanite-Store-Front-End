@@ -1,13 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import UserItemDashBoard from "./UserItemDashBoard";
-import {
-  Table,
-  TableHead,
-  TableBody,
-  TableRow,
-  TableCell,
-} from "@mui/material";
+import { Table, TableHead, TableBody,TableCell,TableRow} from "@mui/material";
 export default function UsersDashBoard() {
   const [loadingUsers, setLoadingUsers] = useState(true);
   const [usersError, setUsersError] = useState(null);
@@ -39,16 +33,21 @@ export default function UsersDashBoard() {
   }, []);
 
   return (
-    <div>
-      <h2>Users Dashboard</h2>
-      <div
-        style={{
-          marginTop: "25px",
-        }}
-      >
-        <Table>
-          <TableHead>
-              <h4>User Table</h4>
+    <div
+      style={{ display: "flex", justifyContent: "center", marginTop: "25px" }}
+    >
+      <div style={{ width: "1100px" }}>
+        <h2 style={{ textAlign: "center" }}>Users List</h2>
+        <Table size="small" style={{ border: "1px solid #ccc", borderRadius: "20px" }}>
+        <TableHead>
+            <TableRow>
+              <TableCell>User ID</TableCell>
+              <TableCell>User Name</TableCell>
+              <TableCell>User Email</TableCell>
+              <TableCell>User Role</TableCell>
+              <TableCell>Delete User</TableCell>
+
+            </TableRow>
           </TableHead>
           <TableBody>
             {userList.map((user) => (
