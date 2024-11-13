@@ -1,13 +1,10 @@
 import React from "react";
-
 import NotFound from "../components/error/NotFound";
 
-const NotFounPage = () => {
+export default function NotFounPage() {
   return (
-    <div className="notfoundpage">
+    <div>
       <NotFound />
     </div>
   );
-};
-
-export default NotFounPage;
+}
