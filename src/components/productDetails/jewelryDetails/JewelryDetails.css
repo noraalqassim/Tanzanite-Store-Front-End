@@ -95,6 +95,7 @@ img {
   align-items: flex-start;
   justify-content: center;
   font-weight: 10px;
+  
 }
 .gemstonInfo-h5{
   color: #384b84c8;;
@@ -111,6 +112,9 @@ img {
   display: flex;
   align-items: flex-start;
   padding-right: 80px;
+  text-align: left;
+  font-weight: 500;
+  font-size: 14px;
 }
 .product-description {
   font-weight: 18px;
@@ -118,6 +122,8 @@ img {
   font-weight: 300;
   opacity: 0.9;
   margin-top: 25px;
+  text-align: left;
+  
 }
 
 .btn-groups {

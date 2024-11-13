@@ -1,0 +1,105 @@
+.about {
+  display: flex;
+}
+.about .about-container {
+  width: 80%;
+  display: block;
+  margin: 0px auto;
+  padding: 50px 0px;
+}
+.about-container .about-title {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 50px;
+}
+.about-container .about-title h1 {
+  text-transform: uppercase;
+  font-size: 35px;
+  color: rgb(57, 57, 57);
+}
+.about-container .about-title h1::after {
+  content: "";
+  height: 5px;
+  width: 100px;
+  background-color: #bfa670;
+  border-radius: 20px;
+  display: block;
+  margin: auto;
+}
+.about-content {
+  float: left;
+  width: 55%;
+}
+.about-content .article h3 {
+  color: #333;
+  font-size: 17px;
+  margin-top: 12px;
+  margin-bottom: 30px;
+  text-align: left;
+}
+.about-content .article p {
+  margin-top: 12px;
+  font-size: 13px;
+  line-height: 1.5;
+  color: rgb(57, 57, 57);
+  text-align: left;
+  font-weight: 400;
+}
+.about-image {
+  float: right;
+  width: 35%;
+}
+.about-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.button-51 {
+  background-color: transparent;
+  border: 1px solid #bfa670;
+  box-sizing: border-box;
+  color: #242424;
+  font-family: "Avenir Next LT W01 Bold", sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 24px;
+  padding: 16px 23px;
+  position: relative;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-51:hover,
+.button-51:active {
+  outline: 0;
+}
+
+.button-51:hover {
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.button-51:before {
+  background-color: #bfa6708c;
+  content: "";
+  height: calc(100% + 3px);
+  position: absolute;
+  right: -7px;
+  top: -9px;
+  transition: background-color 300ms ease-in;
+  width: 100%;
+  z-index: -1;
+}
+
+.button-51:hover:before {
+  background-color: #bfa670ae;
+}
+
+@media (min-width: 768px) {
+  .button-51 {
+    padding: 16px 32px;
+  }
+}

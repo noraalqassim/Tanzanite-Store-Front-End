@@ -93,17 +93,17 @@ export default function JewelryDetails(prop) {
   };
   return (
     <div>
-      <div class="main-wrapper">
-        <div class="container">
-          <div class="product-div">
-            <div class="product-div-left">
-              <div class="img-container">
+      <div className="main-wrapper">
+        <div className="container">
+          <div className="product-div">
+            <div className="product-div-left">
+              <div className="img-container">
                 <img
                   src={jewelryDetail.jewelryImage[0]}
                   alr={jewelryDetail.jewelryName}
                 />
               </div>
-              <div class="hover-container">
+              <div className="hover-container">
                 <div className="img-div">
                   <img
                     src={jewelryDetail.jewelryImage[0]}
@@ -130,12 +130,12 @@ export default function JewelryDetails(prop) {
                 </div>
               </div>
             </div>
-            <div class="product-div-right">
-              <span class="product-name">{jewelryDetail.jewelryName}</span>
-              <span class="product-price">
+            <div className="product-div-right">
+              <span className="product-name">{jewelryDetail.jewelryName}</span>
+              <span className="product-price">
                 $ {jewelryDetail.finalProductPrice}
               </span>
-              <div class="product-rating">
+              <div className="product-rating">
                 <span>
                   <i>
                     <FaStar style={{ color: "gold" }} />
@@ -163,7 +163,7 @@ export default function JewelryDetails(prop) {
                 </span>
                 <span style={{ color: "#6c6c6c" }}>(350 ratings)</span>
               </div>
-              <p class="product-description">{jewelryDetail.description}</p>
+              <p className="product-description">{jewelryDetail.description}</p>
               <h5 className="gemstonInfo-h5" onClick={toggleJewelryInfo}>
                 Jewelry Piece Information:{" "}
                 {isJewelryInfoVisible ? <IoIosArrowUp /> : <IoIosArrowDown />}
@@ -208,11 +208,11 @@ export default function JewelryDetails(prop) {
                 </div>
               )}
 
-              <div class="btn-groups">
+              <div className="btn-groups">
                 <button
                   onClick={() => addToCart(jewelryDetail)}
                   type="button"
-                  class="add-cart-btn"
+                  className="add-cart-btn"
                 >
                   add to cart <FaCartShopping />
                 </button>
@@ -221,28 +221,6 @@ export default function JewelryDetails(prop) {
           </div>
         </div>
       </div>
-      {/* <div className="wrapper-product">
-        <div className="product-img">
-          <img
-            src={jewelryDetail.jewelryImage[0]}
-            alr={jewelryDetail.jewelryName}
-          />
-        </div>
-        <div className="product-info">
-          <div className="product-text">
-            <h1>{jewelryDetail.jewelryName}</h1>
-            <h2>{jewelryDetail.jewelryType}</h2>
-            <p>{jewelryDetail.description}</p>
-          </div>
-          <div className="product-price-btn">
-            <p> {jewelryDetail.jewelryPrice} $</p>
-
-            <button onClick={() => addToCart(jewelryDetail)} type="button">
-              Add to Cart
-            </button>
-          </div>
-        </div>
-      </div> */}
     </div>
   );
 }

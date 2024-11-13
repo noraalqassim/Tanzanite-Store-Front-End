@@ -10,9 +10,7 @@ export default function Footer() {
     <div>
       <footer id="footer" data-aos="fade-up" data-aos-duration="1500">
         <h1 className="text-center">Tanzanite Store</h1>
-        <p className="text-center">
-          Where timeless beauty meets personalized design.
-        </p>
+        <p className="text-center">Where timeless beauty meets our jewelry.</p>
         <div className="icons text-center">
           <a
             href="https://twitter.com"
@@ -42,7 +40,10 @@ export default function Footer() {
           >
             <ImLinkedin />
           </a>
-          <a href="mailto:noraalqassim@gmail.com" className="text-decoration-none">
+          <a
+            href="mailto:noraalqassim@gmail.com"
+            className="text-decoration-none"
+          >
             <HiOutlineMail />
           </a>
         </div>
@@ -51,8 +52,11 @@ export default function Footer() {
         </div>
         <div className="credite text-center">
           Creating By
-          <a href="https://github.com/NoraAlqassim" target="_blank"
-            className="text-decoration-none">
+          <a
+            href="https://github.com/NoraAlqassim"
+            target="_blank"
+            className="text-decoration-none"
+          >
             <span> Norah Alqassim</span>
           </a>
         </div>

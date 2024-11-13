@@ -29,7 +29,7 @@ export default function UserOrderHistory(prop) {
   console.log(orderList, "orderList");
 
   if (orderList.length === 0) {
-    return <NoOrder/>;
+    return <NoOrder />;
   }
   return (
     <div>
@@ -43,11 +43,12 @@ export default function UserOrderHistory(prop) {
               <th scope="col">Order Price:</th>
               <th scope="col">Order Status:</th>
               <th scope="col">Order Details:</th>
+              <th scope="col">Review</th>
             </tr>
           </thead>
           <tbody>
             {orderList.map((order) => {
-              return <OrderItem key={order.orderId} order={order} />;
+              return <OrderItem key={order.orderId} order={order} userData={userData}/>;
             })}
           </tbody>
         </table>

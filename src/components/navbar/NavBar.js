@@ -195,14 +195,14 @@ export default function NavBar(prop) {
                   </Link>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link" href="#">
+                <Link to="/aboutUs" className="nav-link">
                     About Us
-                  </a>
+                  </Link>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link" href="#">
-                    Newsletter
-                  </a>
+                <Link to="/newsletter" className="nav-link">
+                    NewsLatters
+                  </Link>
                 </li>
               </ul>
             </div>
