@@ -1,0 +1,20 @@
+.review {
+  padding: 100px 0;
+}
+.review-contener {
+  max-width: 1000px;
+  margin: auto;
+  padding: 0 30px;
+}
+.section-heeder {
+  text-align: center;
+  margin-bottom: 20px;
+  margin-top: -60px;
+}
+.section-heeder .review-title {
+  font-size: 40px;
+  font-weight: 600;
+  text-transform: capitalize;
+  color: #bfa670;
+  line-height: 1.5;
+}

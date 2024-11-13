@@ -13,7 +13,7 @@ import {
   IconButton,
 } from "@mui/material";
 import Visibility from "@mui/icons-material/Visibility";
-import VisibilityOff from "@mui/icons-material/VisibilityOff";
+import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
 import axios from "axios";
 export default function UserLogIn(prop) {
   const { getUserData } = prop;
@@ -112,7 +112,7 @@ export default function UserLogIn(prop) {
                   onMouseUp={handleMouseUpPassword}
                   edge="end"
                 >
-                  {showPassword ? <VisibilityOff /> : <Visibility />}
+                  {showPassword ? <VisibilityOffIcon /> : <Visibility />}
                 </IconButton>
               </InputAdornment>
             }

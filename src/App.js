@@ -24,6 +24,8 @@ import UserOrderHistory from "./components/orders/UserOrderHistory";
 import OrdersDashBoard from "./components/dashboard/order/OrdersDashBoard";
 import GemstoneDachBoard from "./components/dashboard/gemstone/GemstoneDachBoard";
 import CategoryDachBoard from "./components/dashboard/Category/CategoryDachBoard";
+import NewsletterPage from "./pages/NewsletterPage";
+import AboutUsPage from "./pages/AboutUsPage";
 function App() {
   const [wishList, setWishList] = useState([]);
   const [cartList, setCartList] = useState([]);
@@ -141,6 +143,24 @@ function App() {
   }, []);
   console.log(userAddres, "userAddres");
 
+  const [reviewList, setReviewList] = useState([]);
+    //Revews
+    useEffect(() => {
+      const fetchReviews = async () => {
+        try {
+          const response = await axios.get("http://localhost:5125/api/v1/Reviews");
+          setReviewList(response.data);
+        } catch (error) {
+          console.error("Error fetching reviews:", error);
+        }
+      };
+  
+      fetchReviews();
+    }, []);
+  
+    console.log(reviewList, "review List")
+
+
   let isAuthenticated = userData ? true : false;
 
   if (loadingJewelry) {
@@ -155,6 +175,9 @@ function App() {
       </div>
     );
   }
+
+
+  
 
   const router = createBrowserRouter([
     {
@@ -171,7 +194,7 @@ function App() {
       children: [
         {
           path: "/",
-          element: <HomePage />,
+          element: <HomePage reviewList={reviewList} setReviewList={setReviewList}  />,
         },
         {
           path: "/contactUs",
@@ -321,6 +344,14 @@ function App() {
             />
           ),
         },
+        {
+          path: "/aboutUs",
+          element: <AboutUsPage />,
+        },
+        {
+          path: "/newsletter",
+          element: <NewsletterPage />,
+        }
       ],
     },
     { path: "*", element: <NotFounPage /> },
