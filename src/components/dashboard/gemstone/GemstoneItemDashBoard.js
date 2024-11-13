@@ -1,29 +1,15 @@
-import React, { useState, useEffect } from "react";
+import React, { useState} from "react";
 import axios from "axios";
 import {
-  Box,
   Button,
   Dialog,
   DialogContent,
   DialogTitle,
-  IconButton,
   Stack,
-  TextField,
-  MenuItem,
-  FormControl,
-  InputLabel,
-  Select,
-  TableContainer,
-  Paper,
-  Table,
-  TableHead,
   TableCell,
-  TableBody,
-  TableRow,
-  TablePagination,
+  TableRow
 } from "@mui/material";
-import CloseIcon from "@mui/icons-material/Close";
-import DrawerListDashBoard from "../DrawerListDashBoard";
+
 
 export default function GemstoneItemDashBoard(prop) {
   const { gemstone, getGemstoneData } = prop;
