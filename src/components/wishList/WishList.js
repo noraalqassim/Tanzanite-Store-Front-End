@@ -34,7 +34,7 @@ export default function WishList(prop) {
 
   return (
     <div className="wishList">
-      <div className="title">Shopping Bag</div>
+      <div className="title">WishList</div>
       <br />
       <br />
       {wishList.map((item) => {
