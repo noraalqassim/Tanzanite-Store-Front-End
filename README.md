@@ -1,48 +1,77 @@
-# Project: Frontend for E-commerce Website
+# E-Commerce Frontend Project (Tanzanite Website)
 
-This project is a frontend for an e-commerce website, developed using modern web technologies. It provides an interactive platform for users to browse and purchase products, while also offering a management dashboard for administrators to handle products, users, and orders. The project is built with a focus on a smooth and intuitive user experience, with added functionalities for searching, filtering, and managing products.
+## Project Overview
 
-***Deadline: 14/11/2024***
+This project is a frontend solution for an e-commerce platform dedicated to selling jewelry, built using React. The project includes core functionalities such as user authentication, product management, category management, and order processing.
 
-### Level 1: Basic Requirements
+## Table of Contents
 
-**Pages to Create:**
+- [Features](#features)
+- [Technologies Used](#technologies-used)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Build](#build)
+- [Deployment](#deployment)
+- [License](#license)
 
-1. Home page
-2. Product page(list all the products)
-3. Product Detail(contain the details of a product)
-4. Dashboard page
+## Features
 
-**Functionalities for a Visitor:**
+- **User Management**
+  - Register new user
+  - Login
+  - Orders
+  - Update Profile
+  - Add Address Details
+  - Create Review
+  - Add Product To WishList
+  - Add Product To Cart
 
-- Get list of products
-- Search products by name
-- Filter products price
-- Add products to a cart
-- Remove products from a cart
+## Technologies Used
 
-**Functionalities for an Admin:**
+- **React**: A JavaScript library for building user interfaces, allowing for the creation of reusable UI components and efficient rendering of dynamic data.
+- **Redux**: (if applicable) A state management library for JavaScript applications, often used with React to manage application state in a predictable way.
+- **React Router**: A library for routing in React applications, enabling navigation between different views or components.
+- **Axios**: A promise-based HTTP client for making requests to an API, used for fetching data from the server.
+- **Bootstrap**: A popular front-end framework for developing responsive and mobile-first websites, providing pre-designed components and a grid system.
+- **Material-UI (MUI)**: A React component library that implements Google's Material Design, offering a set of customizable components to build user interfaces.
+- **Slick Carousel**: A responsive carousel component for React, used to create image sliders or carousels that enhance the user experience.
+- **CSS**: Styling languages used to design the layout and appearance of the application.
 
-- Add a new product, update info of a product, remove a product
+## Installation
 
-### Level 2: Additional Requirements
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/noraalqassim/Tanzanite-Store-Front-End.git
+   cd Tanzanite-Store-Front-End
+   ```
+2. Install the dependencies:
+   ```bash
+   npm install
+   ```
 
-**Authentication:**
+## Usage
 
-- Implement register and login functionality via email and password
-- Protect the routes based on login and admin status
+To start the development server, run
 
-**Functionalities for an Admin:**
+```bash
+npm start
+```
 
-- list all users, delete a user.
-- list all orders
+Open your browser and navigate to http://localhost:3000.
 
-### Level 3: Bonus Requirement (Optional)
+## Build
 
-- Messages, show loading, success, and error messages (e.g., when loading products list or adding new product)
-- Implement pagination feature
-- Create a Profile Page (only available if user logs in), implement editing user profile feature (user can change first name, last name)
+To create a production build, run:
 
-`Please note that the bonus requirements and reviews are optional and can be completed if you have additional time and advanced skills.`
+```bash
+npm run build
+```
 
-Happy coding!
+This will create an optimized build of your application in the build directory.
+
+## Deployment
+
+The application is deployed and can be accessed at: 
+
+## License
+This project is licensed under the MIT License - see the LICENSE file for details.
