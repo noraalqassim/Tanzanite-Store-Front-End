@@ -29,7 +29,7 @@ export default function CategoryItemDaxhBoard(prop) {
     const token = localStorage.getItem("token");
     axios
       .delete(
-        `http://localhost:5125/api/v1/Categories/${category.categoryId}`,
+        `https://tanzanite-store-back-end.onrender.com/api/v1/Categories/${category.categoryId}`,
         {
           headers: {
             Authorization: `Bearer ${token}`,

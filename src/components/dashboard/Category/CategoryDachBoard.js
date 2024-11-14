@@ -26,7 +26,7 @@ export default function CategoryDachBoard() {
   const getCategoryData = async () => {
     try {
       const response = await axios.get(
-        "http://localhost:5125/api/v1/Categories"
+        "https://tanzanite-store-back-end.onrender.com/api/v1/Categories"
       );
       setCategoryList(response.data);
       console.log("API Category Response:", response.data);
@@ -72,7 +72,8 @@ export default function CategoryDachBoard() {
   // send request to backend
   function CreateNewCategory() {
     const token = localStorage.getItem("token");
-    const url = "http://localhost:5125/api/v1/Categories";
+    const url =
+      "https://tanzanite-store-back-end.onrender.com/api/v1/Categories";
     axios
       .post(url, categoryInfo, {
         headers: {
@@ -168,17 +169,11 @@ export default function CategoryDachBoard() {
         }}
       >
         <Table size="small" style={{ border: "1px solid #ccc" }}>
-          <TableHead >
+          <TableHead>
             <TableRow>
-              <TableCell >
-                Categories ID
-              </TableCell>
-              <TableCell>
-                Categories Name
-              </TableCell>
-              <TableCell >
-                Categories Image
-              </TableCell>
+              <TableCell>Categories ID</TableCell>
+              <TableCell>Categories Name</TableCell>
+              <TableCell>Categories Image</TableCell>
               <TableCell>Actions</TableCell>
             </TableRow>
           </TableHead>

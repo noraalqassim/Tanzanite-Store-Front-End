@@ -55,7 +55,7 @@ function App() {
 
   // Fetch Jewelry Data
   const getJewelryUrl = () => {
-    let Jewelryurl = `http://localhost:5125/api/v1/Jewelry?Limit=${limit}&Offset=${offset}`;
+    let Jewelryurl = `https://tanzanite-store-back-end.onrender.com/api/v1/Jewelry?Limit=${limit}&Offset=${offset}`;
     if (userInput) Jewelryurl += `&Search=${userInput}`;
     if (minPrice) Jewelryurl += `&MinPrice=${minPrice}`;
     if (maxPrice) Jewelryurl += `&MaxPrice=${maxPrice}`;
@@ -63,7 +63,7 @@ function App() {
     console.log(Jewelryurl, "Jewelry url");
     return Jewelryurl;
   };
-
+  //https://tanzanite-store-back-end.onrender.com
   const getJewelryData = async () => {
     try {
       const response = await axios.get(getJewelryUrl());
@@ -91,11 +91,14 @@ function App() {
     setLoadingUserData(true);
     const token = localStorage.getItem("token");
     axios
-      .get("http://localhost:5125/api/v1/User/Profile", {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      })
+      .get(
+        "https://tanzanite-store-back-end.onrender.com/api/v1/User/Profile",
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      )
       .then((resp) => {
         setUserData(resp.data);
         console.log("API Profile Response:", resp.data);
@@ -119,7 +122,8 @@ function App() {
 
   const getUserAddresList = async () => {
     const token = localStorage.getItem("token");
-    const url = "http://localhost:5125/api/v1/Address/UserAddress";
+    const url =
+      "https://tanzanite-store-back-end.onrender.com/api/v1/Address/UserAddress";
 
     try {
       const response = await axios.get(url, {
@@ -144,22 +148,23 @@ function App() {
   console.log(userAddres, "userAddres");
 
   const [reviewList, setReviewList] = useState([]);
-    //Revews
-    useEffect(() => {
-      const fetchReviews = async () => {
-        try {
-          const response = await axios.get("http://localhost:5125/api/v1/Reviews");
-          setReviewList(response.data);
-        } catch (error) {
-          console.error("Error fetching reviews:", error);
-        }
-      };
-  
-      fetchReviews();
-    }, []);
-  
-    console.log(reviewList, "review List")
+  //Revews
+  useEffect(() => {
+    const fetchReviews = async () => {
+      try {
+        const response = await axios.get(
+          "https://tanzanite-store-back-end.onrender.com/api/v1/Reviews"
+        );
+        setReviewList(response.data);
+      } catch (error) {
+        console.error("Error fetching reviews:", error);
+      }
+    };
 
+    fetchReviews();
+  }, []);
+
+  console.log(reviewList, "review List");
 
   let isAuthenticated = userData ? true : false;
 
@@ -176,9 +181,6 @@ function App() {
     );
   }
 
-
-  
-
   const router = createBrowserRouter([
     {
       path: "/",
@@ -194,7 +196,9 @@ function App() {
       children: [
         {
           path: "/",
-          element: <HomePage reviewList={reviewList} setReviewList={setReviewList}  />,
+          element: (
+            <HomePage reviewList={reviewList} setReviewList={setReviewList} />
+          ),
         },
         {
           path: "/contactUs",
@@ -351,7 +355,7 @@ function App() {
         {
           path: "/newsletter",
           element: <NewsletterPage />,
-        }
+        },
       ],
     },
     { path: "*", element: <NotFounPage /> },

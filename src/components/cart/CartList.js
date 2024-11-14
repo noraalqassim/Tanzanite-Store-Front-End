@@ -6,7 +6,7 @@ import CartItem from "./CartItem";
 import { FaArrowLeftLong } from "react-icons/fa6";
 import "./cart.css";
 export default function CartList(prop) {
-  const { cartList, setCartList,userData } = prop;
+  const { cartList, setCartList, userData } = prop;
 
   const navigate = useNavigate();
 
@@ -19,40 +19,46 @@ export default function CartList(prop) {
     return result;
   }, 0);
 
-//http://localhost:5125/api/v1/Order
+  //https://tanzanite-store-back-end.onrender.com/api/v1/Order
 
-const orderProducts = cartList.map((item)=> {
-  return{jewelryId: item.jewelryId, quantity: item.quantity}
-})
+  const orderProducts = cartList.map((item) => {
+    return { jewelryId: item.jewelryId, quantity: item.quantity };
+  });
 
-
-const token = localStorage.getItem("token");
+  const token = localStorage.getItem("token");
   //checkout
-  function checkOut(){
-if(!userData){
-  alert("Please Log in to checkout");
-  navigate("/login");
-  return;
-}
-    const orderUrl="http://localhost:5125/api/v1/Order";
-    axios.post(orderUrl,{
-      orderProducts:orderProducts
-    },{
-      headers: { Authorization: `Bearer ${token}`, },
-    }).then((res) => {
-      console.log(res, "order list");
+  function checkOut() {
+    if (!userData) {
+      alert("Please Log in to checkout");
+      navigate("/login");
+      return;
+    }
+    const orderUrl =
+      "https://tanzanite-store-back-end.onrender.com/api/v1/Order";
+    axios
+      .post(
+        orderUrl,
+        {
+          orderProducts: orderProducts,
+        },
+        {
+          headers: { Authorization: `Bearer ${token}` },
+        }
+      )
+      .then((res) => {
+        console.log(res, "order list");
 
-      if (res.status === 200) {
-        alert("Order is created successfully! ");
-        navigate("/jewelry");
-        setCartList([]);
-      }
-    })
-    .catch((error) => {
-      console.log(error);
-      alert(error.response.data);
-      navigate("/profile");
-    });
+        if (res.status === 200) {
+          alert("Order is created successfully! ");
+          navigate("/jewelry");
+          setCartList([]);
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+        alert(error.response.data);
+        navigate("/profile");
+      });
   }
 
   return (

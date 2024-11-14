@@ -10,7 +10,7 @@ import {
   OutlinedInput,
   InputAdornment,
   IconButton,
-  Button
+  Button,
 } from "@mui/material";
 import Visibility from "@mui/icons-material/Visibility";
 import VisibilityOff from "@mui/icons-material/VisibilityOff";
@@ -36,7 +36,8 @@ export default function UserRegister() {
   const navigate = useNavigate();
 
   function registerNewUser() {
-    const userUrl = "http://localhost:5125/api/v1/User/Register";
+    const userUrl =
+      "https://tanzanite-store-back-end.onrender.com/api/v1/User/Register";
 
     axios
       .post(userUrl, userInfo)
@@ -97,9 +98,9 @@ export default function UserRegister() {
         sx={{
           display: "flex",
           flexDirection: "column",
-          gap: 2, 
-          maxWidth: 500, 
-          width: "100%", 
+          gap: 2,
+          maxWidth: 500,
+          width: "100%",
           margin: "auto",
           padding: 2,
           backgroundColor: "rgba(255, 255, 255, 0.9)",
@@ -162,11 +163,14 @@ export default function UserRegister() {
             className="custom-password-input custom-text"
           />
         </FormControl>
-        <Button className="custom-button" onClick={registerNewUser}> Register</Button>
+        <Button className="custom-button" onClick={registerNewUser}>
+          {" "}
+          Register
+        </Button>
 
         <h6 className="have-acount">Already have an account? Log in here!</h6>
-        <Link to="/login" className='login-link' >
-          <button  className="custom-button2">Log In</button>
+        <Link to="/login" className="login-link">
+          <button className="custom-button2">Log In</button>
         </Link>
       </Box>
     </div>

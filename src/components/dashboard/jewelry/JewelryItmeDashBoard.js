@@ -19,8 +19,8 @@ import CloseIcon from "@mui/icons-material/Close";
 export default function JewelryItmeDashBoard(prop) {
   const { jewelryItem, getJewelryData } = prop;
 
-  //Delete DELETE -> http://localhost:5125/api/v1/Jewelry/${jewelryItem.jewelryId}
-  //Update Put -> http://localhost:5125/api/v1/Jewelry/${jewelryItem.jewelryId}
+  //Delete DELETE -> https://tanzanite-store-back-end.onrender.com/api/v1/Jewelry/${jewelryItem.jewelryId}
+  //Update Put -> https://tanzanite-store-back-end.onrender.com/api/v1/Jewelry/${jewelryItem.jewelryId}
 
   //pop up form
   const [open, openchange] = useState(false);
@@ -43,7 +43,7 @@ export default function JewelryItmeDashBoard(prop) {
 
   function deleteJewelryById() {
     const token = localStorage.getItem("token");
-    const url = `http://localhost:5125/api/v1/Jewelry/${jewelryItem.jewelryId}`;
+    const url = `https://tanzanite-store-back-end.onrender.com/api/v1/Jewelry/${jewelryItem.jewelryId}`;
     axios
       .delete(url, {
         headers: {
@@ -70,7 +70,8 @@ export default function JewelryItmeDashBoard(prop) {
   });
 
   function fetchGemstone() {
-    let gemstoneUrl = "http://localhost:5125/api/v1/Gemstone/all";
+    let gemstoneUrl =
+      "https://tanzanite-store-back-end.onrender.com/api/v1/Gemstone/all";
     axios
       .get(gemstoneUrl)
       .then((response) => {
@@ -103,7 +104,7 @@ export default function JewelryItmeDashBoard(prop) {
   // Update jewelry information
   const updateJewelry = () => {
     const token = localStorage.getItem("token");
-    const url = `http://localhost:5125/api/v1/Jewelry/${jewelryItem.jewelryId}`;
+    const url = `https://tanzanite-store-back-end.onrender.com/api/v1/Jewelry/${jewelryItem.jewelryId}`;
     axios
       .patch(url, updatedJewelryInfo, {
         headers: { Authorization: `Bearer ${token}` },
@@ -210,10 +211,18 @@ export default function JewelryItmeDashBoard(prop) {
             <br /> This action cannot be undone.
           </p>
           <Stack spacing={2} direction="row">
-            <Button onClick={deleteJewelryById} color="error" variant="outlined">
+            <Button
+              onClick={deleteJewelryById}
+              color="error"
+              variant="outlined"
+            >
               Yes, Delete
             </Button>
-            <Button onClick={closeConfirmDialog} color="success" variant="outlined">
+            <Button
+              onClick={closeConfirmDialog}
+              color="success"
+              variant="outlined"
+            >
               Cancel
             </Button>
           </Stack>

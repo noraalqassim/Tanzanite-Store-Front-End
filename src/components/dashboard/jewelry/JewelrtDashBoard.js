@@ -37,7 +37,7 @@ export default function JewelrtDashBoard() {
   const getJewelryData = async () => {
     try {
       const response = await axios.get(
-        "http://localhost:5125/api/v1/Jewelry/all"
+        "https://tanzanite-store-back-end.onrender.com/api/v1/Jewelry/all"
       );
       setJewelryResponse(response.data);
       console.log("API Jewelry Response:", response.data);
@@ -72,7 +72,8 @@ export default function JewelrtDashBoard() {
   });
 
   function fetchGemstone() {
-    let gemstoneUrl = "http://localhost:5125/api/v1/Gemstone/all";
+    let gemstoneUrl =
+      "https://tanzanite-store-back-end.onrender.com/api/v1/Gemstone/all";
     axios
       .get(gemstoneUrl)
       .then((response) => {
@@ -122,7 +123,7 @@ export default function JewelrtDashBoard() {
   // send request to backend
   function CreateNewJewelry() {
     const token = localStorage.getItem("token");
-    const url = "http://localhost:5125/api/v1/Jewelry";
+    const url = "https://tanzanite-store-back-end.onrender.com/api/v1/Jewelry";
     axios
       .post(url, jewelryInfo, {
         headers: {
@@ -298,16 +299,30 @@ export default function JewelrtDashBoard() {
           marginTop: "25px",
         }}
       >
-        <TableHead sx={{ minWidth: 650 , }} aria-label="simple table">
+        <TableHead sx={{ minWidth: 650 }} aria-label="simple table">
           <TableRow>
             <TableCell sx={{ paddingRight: "20px" }}>jewelryId</TableCell>
-            <TableCell align="right" sx={{ paddingRight: "10px" }} >JewelryName</TableCell>
-            <TableCell align="right" sx={{ paddingRight: "10px" }}>JewelryType</TableCell>
-            <TableCell align="right" sx={{ paddingRight: "40px" }}>JewelryPrice</TableCell>
-            <TableCell align="right" sx={{ paddingRight: "60px" }}>Jewelry Images</TableCell>
-            <TableCell align="right" sx={{ paddingRight: "40px" }}>Description</TableCell>
-            <TableCell align="right" sx={{ paddingRight: "40px" }}>Gemstone Name</TableCell>
-            <TableCell align="right" sx={{ paddingRight: "40px" }}>Final Price</TableCell>
+            <TableCell align="right" sx={{ paddingRight: "10px" }}>
+              JewelryName
+            </TableCell>
+            <TableCell align="right" sx={{ paddingRight: "10px" }}>
+              JewelryType
+            </TableCell>
+            <TableCell align="right" sx={{ paddingRight: "40px" }}>
+              JewelryPrice
+            </TableCell>
+            <TableCell align="right" sx={{ paddingRight: "60px" }}>
+              Jewelry Images
+            </TableCell>
+            <TableCell align="right" sx={{ paddingRight: "40px" }}>
+              Description
+            </TableCell>
+            <TableCell align="right" sx={{ paddingRight: "40px" }}>
+              Gemstone Name
+            </TableCell>
+            <TableCell align="right" sx={{ paddingRight: "40px" }}>
+              Final Price
+            </TableCell>
             <TableCell align="right">Actions</TableCell>
           </TableRow>
         </TableHead>

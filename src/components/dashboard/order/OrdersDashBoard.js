@@ -22,7 +22,7 @@ export default function OrdersDashBoard() {
 
   const getOrdersList = async () => {
     const token = localStorage.getItem("token");
-    const url = "http://localhost:5125/api/v1/Order";
+    const url = "https://tanzanite-store-back-end.onrender.com/api/v1/Order";
 
     try {
       const response = await axios.get(url, {

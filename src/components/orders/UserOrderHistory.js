@@ -11,7 +11,7 @@ export default function UserOrderHistory(prop) {
 
   function getOrderByUserId() {
     const token = localStorage.getItem("token");
-    const url = `http://localhost:5125/api/v1/Order/${userData.userId}`;
+    const url = `https://tanzanite-store-back-end.onrender.com/api/v1/Order/${userData.userId}`;
     axios
       .get(url, {
         headers: {
@@ -48,7 +48,13 @@ export default function UserOrderHistory(prop) {
           </thead>
           <tbody>
             {orderList.map((order) => {
-              return <OrderItem key={order.orderId} order={order} userData={userData}/>;
+              return (
+                <OrderItem
+                  key={order.orderId}
+                  order={order}
+                  userData={userData}
+                />
+              );
             })}
           </tbody>
         </table>

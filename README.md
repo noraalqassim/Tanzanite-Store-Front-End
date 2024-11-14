@@ -71,7 +71,7 @@ This will create an optimized build of your application in the build directory.
 
 ## Deployment
 
-The application is deployed and can be accessed at: 
+The application is deployed and can be accessed at: https://tanzanite-store.onrender.com
 
 ## License
 This project is licensed under the MIT License - see the LICENSE file for details.

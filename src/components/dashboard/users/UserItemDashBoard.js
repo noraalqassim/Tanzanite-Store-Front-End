@@ -21,17 +21,20 @@ export default function UserItemDashBoard(prop) {
 
   // Function to handle delete action
   const handleDeleteClick = () => {
-    setOpenConfirmDelete(true); 
+    setOpenConfirmDelete(true);
   };
 
   function deleteUser() {
     const token = localStorage.getItem("token");
     axios
-      .delete(`http://localhost:5125/api/v1/User/${user.userId}`, {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      })
+      .delete(
+        `https://tanzanite-store-back-end.onrender.com/api/v1/User/${user.userId}`,
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      )
       .then((res) => {
         console.log(res);
         if (res.status === 200) {

@@ -25,7 +25,7 @@ export default function UserProfile(prop) {
     const token = localStorage.getItem("token");
     axios
       .patch(
-        `http://localhost:5125/api/v1/User/UpdateProfile/${userData.userId}`,
+        `https://tanzanite-store-back-end.onrender.com/api/v1/User/UpdateProfile/${userData.userId}`,
         {
           name: newName,
           email: newEmail,
@@ -268,10 +268,16 @@ export default function UserProfile(prop) {
         </div>
       </div>
 
-      <div style={{ display: "flex", justifyContent: "center",marginTop: "50px" }}>
+      <div
+        style={{ display: "flex", justifyContent: "center", marginTop: "50px" }}
+      >
         {/* Addres */}
         <Link to="/Addres">
-          <Button variant="contained" className="custom-button" style={{ marginRight: "50px" }}>
+          <Button
+            variant="contained"
+            className="custom-button"
+            style={{ marginRight: "50px" }}
+          >
             Add your addres
           </Button>
         </Link>

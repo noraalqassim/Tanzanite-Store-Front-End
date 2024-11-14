@@ -16,7 +16,7 @@ export default function UsersDashBoard() {
 
   const getUsersList = async () => {
     const token = localStorage.getItem("token");
-    const url = "http://localhost:5125/api/v1/User";
+    const url = "https://tanzanite-store-back-end.onrender.com/api/v1/User";
 
     try {
       const response = await axios.get(url, {
@@ -43,7 +43,7 @@ export default function UsersDashBoard() {
     <div
       style={{ display: "flex", justifyContent: "center", marginTop: "25px" }}
     >
-      <DrawerListDashBoard/>
+      <DrawerListDashBoard />
       <div style={{ width: "1100px" }}>
         <h2 style={{ textAlign: "center" }}>Users List</h2>
         <Table

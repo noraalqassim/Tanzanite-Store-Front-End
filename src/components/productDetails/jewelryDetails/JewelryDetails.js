@@ -21,7 +21,7 @@ export default function JewelryDetails(prop) {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  const jewelryDetailUrl = `http://localhost:5125/api/v1/Jewelry/${jewelryId}`;
+  const jewelryDetailUrl = `https://tanzanite-store-back-end.onrender.com/api/v1/Jewelry/${jewelryId}`;
 
   function fetchProductDetail() {
     axios
@@ -70,7 +70,7 @@ export default function JewelryDetails(prop) {
     allHoverImages[0].parentElement.classList.add("active");
   });
 
-  //active image 
+  //active image
   allHoverImages.forEach((image) => {
     image.addEventListener("mouseover", () => {
       imgContainer.querySelector("img").src = image.src;
@@ -84,7 +84,7 @@ export default function JewelryDetails(prop) {
       img.parentElement.classList.remove("activeImage");
     });
   }
-  
+
   const toggleGemstoneInfo = () => {
     setIsGemstoneInfoVisible(!isGemstoneInfoVisible);
   };

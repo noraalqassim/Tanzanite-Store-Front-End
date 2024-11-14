@@ -6,7 +6,7 @@ import { Button, Box, Stack, TextField } from "@mui/material";
 
 export default function UserAddres(prop) {
   const { userData } = prop;
-  //http://localhost:5125/api/v1/Address
+  //https://tanzanite-store-back-end.onrender.com/api/v1/Address
 
   const [open, openchange] = useState(false);
   const functionopenpopup = () => {
@@ -34,10 +34,10 @@ export default function UserAddres(prop) {
   console.log("Addres Info from userAddres", AddresInfo);
 
   const navigate = useNavigate();
-  
+
   function CreateNewAddres() {
     const token = localStorage.getItem("token");
-    const url = "http://localhost:5125/api/v1/Address";
+    const url = "https://tanzanite-store-back-end.onrender.com/api/v1/Address";
     axios
       .post(url, AddresInfo, {
         headers: {
@@ -69,7 +69,7 @@ export default function UserAddres(prop) {
         boxShadow: "0 2px 4px rgba(0,0,0,0.1)",
         margin: "0 auto",
         padding: "20px",
-        textAlign: "center"
+        textAlign: "center",
       }}
     >
       <h3>Add Your Addres information</h3>

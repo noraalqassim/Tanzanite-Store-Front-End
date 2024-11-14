@@ -13,7 +13,7 @@ import {
   IconButton,
 } from "@mui/material";
 import Visibility from "@mui/icons-material/Visibility";
-import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
+import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
 import axios from "axios";
 export default function UserLogIn(prop) {
   const { getUserData } = prop;
@@ -33,7 +33,8 @@ export default function UserLogIn(prop) {
   const navigate = useNavigate();
 
   function logInUser() {
-    const userUrlLogIn = "http://localhost:5125/api/v1/User/LogIn";
+    const userUrlLogIn =
+      "https://tanzanite-store-back-end.onrender.com/api/v1/User/LogIn";
 
     // send req to backend
     axios

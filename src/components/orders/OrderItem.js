@@ -17,8 +17,10 @@ export default function OrderItem(props) {
   const [open, setOpen] = useState(false);
   const [openReview, setOpenReview] = useState(false);
   const [reviewSubmitted, setReviewSubmitted] = useState(() => {
-    const isReviewSubmitted = localStorage.getItem(`reviewSubmitted_${order.orderId}`);
-    return isReviewSubmitted === 'true';
+    const isReviewSubmitted = localStorage.getItem(
+      `reviewSubmitted_${order.orderId}`
+    );
+    return isReviewSubmitted === "true";
   });
 
   const handleOpen = () => {
@@ -72,7 +74,7 @@ export default function OrderItem(props) {
   // send request to backend
   function CreateNewReview() {
     const token = localStorage.getItem("token");
-    const url = "http://localhost:5125/api/v1/Reviews";
+    const url = "https://tanzanite-store-back-end.onrender.com/api/v1/Reviews";
     axios
       .post(url, reviewInfo, {
         headers: {

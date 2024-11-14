@@ -45,7 +45,7 @@ export default function OrderItemDashBoard(prop) {
 
   const updateOrderStatus = () => {
     const token = localStorage.getItem("token");
-    const url = `http://localhost:5125/api/v1/Order/${order.orderId}`;
+    const url = `https://tanzanite-store-back-end.onrender.com/api/v1/Order/${order.orderId}`;
 
     axios
       .put(url, updatedStatus, {
@@ -69,16 +69,16 @@ export default function OrderItemDashBoard(prop) {
 
     switch (status) {
       case "Pending":
-        style = { color: "red",fontSize: "1rem" }; 
+        style = { color: "red", fontSize: "1rem" };
         break;
       case "Shipped":
-        style = { color: "blue",fontSize: "1rem"  };
+        style = { color: "blue", fontSize: "1rem" };
         break;
       case "Delivered":
-        style = { color: "green" ,fontSize: "1rem" }; 
+        style = { color: "green", fontSize: "1rem" };
         break;
       default:
-        style = {}; 
+        style = {};
         break;
     }
 

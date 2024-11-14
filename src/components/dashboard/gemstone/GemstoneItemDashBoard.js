@@ -1,4 +1,4 @@
-import React, { useState} from "react";
+import React, { useState } from "react";
 import axios from "axios";
 import {
   Button,
@@ -7,9 +7,8 @@ import {
   DialogTitle,
   Stack,
   TableCell,
-  TableRow
+  TableRow,
 } from "@mui/material";
-
 
 export default function GemstoneItemDashBoard(prop) {
   const { gemstone, getGemstoneData } = prop;
@@ -28,7 +27,7 @@ export default function GemstoneItemDashBoard(prop) {
     const token = localStorage.getItem("token");
     axios
       .delete(
-        `http://localhost:5125/api/v1/Gemstone/${gemstone.gemstoneId}`,
+        `https://tanzanite-store-back-end.onrender.com/api/v1/Gemstone/${gemstone.gemstoneId}`,
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -52,7 +51,9 @@ export default function GemstoneItemDashBoard(prop) {
       <TableCell>{gemstone.gemstoneType}</TableCell>
       <TableCell>{gemstone.gemstoneColor}</TableCell>
       <TableCell>{gemstone.gemstoneName}</TableCell>
-      <TableCell>        <div
+      <TableCell>
+        {" "}
+        <div
           style={{
             display: "flex",
             alignItems: "center",
@@ -67,7 +68,8 @@ export default function GemstoneItemDashBoard(prop) {
               style={{ maxWidth: "50px", margin: "5px" }}
             />
           ))}
-        </div></TableCell>
+        </div>
+      </TableCell>
       <TableCell>{gemstone.gemstoneClarity}</TableCell>
       <TableCell>{gemstone.gemstonePrice}</TableCell>
       <TableCell>{gemstone.gemstoneDescription}</TableCell>

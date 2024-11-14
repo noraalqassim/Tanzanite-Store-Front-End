@@ -37,7 +37,7 @@ export default function GemstoneDachBoard() {
   const getGemstoneData = async () => {
     try {
       const response = await axios.get(
-        "http://localhost:5125/api/v1/Gemstone/all"
+        "https://tanzanite-store-back-end.onrender.com/api/v1/Gemstone/all"
       );
       setGemstoneResponse(response.data);
       console.log("API Gemstone Response:", response.data);
@@ -69,7 +69,8 @@ export default function GemstoneDachBoard() {
   const [CategoriesList, setCategoriesList] = useState([]);
 
   function fetchCategories() {
-    let CategoriesUrl = "http://localhost:5125/api/v1/Categories";
+    let CategoriesUrl =
+      "https://tanzanite-store-back-end.onrender.com/api/v1/Categories";
     axios
       .get(CategoriesUrl)
       .then((response) => {
@@ -125,7 +126,7 @@ export default function GemstoneDachBoard() {
   // send request to backend
   function CreateNewGemstone() {
     const token = localStorage.getItem("token");
-    const url = "http://localhost:5125/api/v1/Gemstone";
+    const url = "https://tanzanite-store-back-end.onrender.com/api/v1/Gemstone";
     axios
       .post(url, gemstoneInfo, {
         headers: {
