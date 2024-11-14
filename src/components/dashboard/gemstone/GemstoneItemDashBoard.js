@@ -51,6 +51,7 @@ export default function GemstoneItemDashBoard(prop) {
       <TableCell>{gemstone.gemstoneType}</TableCell>
       <TableCell>{gemstone.gemstoneColor}</TableCell>
       <TableCell>{gemstone.gemstoneName}</TableCell>
+      <TableCell>{gemstone.weight}</TableCell>
       <TableCell>
         {" "}
         <div

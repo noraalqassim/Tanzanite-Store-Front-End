@@ -323,6 +323,7 @@ export default function GemstoneDachBoard() {
               <TableCell>Gemstone ID</TableCell>
               <TableCell>Gemstone Type</TableCell>
               <TableCell>Gemstone Color</TableCell>
+              <TableCell>Gemstone Name</TableCell>
               <TableCell>Weight</TableCell>
               <TableCell>Gemstone Images</TableCell>
               <TableCell>Gemstone Clarity</TableCell>
